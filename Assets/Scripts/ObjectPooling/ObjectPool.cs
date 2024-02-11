@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ObjectPooling
 {
-    [CreateAssetMenu(fileName = "new Pool", menuName = "Game Data/ Object Pool")]
+    [CreateAssetMenu(fileName = "new Pool", menuName = "Game Data/Object Pool")]
     public class ObjectPool : ScriptableObject
     {
         public ObjectPoolName poolName;
@@ -68,16 +68,7 @@ namespace ObjectPooling
 
         public enum ObjectPoolName
         {
-            DebugEnemy,
-            Zombie,
-            Mummy,
-            DamageText,
-            FloatingText,
-            SoulPickup,
-            SoundPlayer,
-            MageProjectile,
-            Mage,
-            Boss
+            FireBall
         }
     }
 }

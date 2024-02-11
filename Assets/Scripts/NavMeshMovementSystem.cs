@@ -1,3 +1,4 @@
+using SystemEvents;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -7,6 +8,16 @@ public class NavMeshMovementSystem : MonoBehaviour
     private NavMeshAgent _agent;
     private Animator _animator;
     private static readonly int HasMoveTarget = Animator.StringToHash("HasMoveTarget");
+
+    private void OnEnable()
+    {
+        SystemEventManager.Subscribe(SystemEventManager.SystemEventType.SpellCast, OnSpellCast);
+    }
+
+    private void OnSpellCast(object obj)
+    {
+        _agent.isStopped = true;
+    }
 
     void Start()
     {
@@ -31,12 +42,18 @@ public class NavMeshMovementSystem : MonoBehaviour
                 NavMeshHit navMeshHit;
                 if (NavMesh.SamplePosition(hit.point, out navMeshHit, 1.0f, NavMesh.AllAreas))
                 {
+                    _agent.isStopped = false;
                     // Set the agent's destination to the hit point on the NavMesh
                     _agent.SetDestination(navMeshHit.position);
                 }
             }
         }
         
-        _animator.SetBool(HasMoveTarget, _agent.hasPath);
+        _animator.SetBool(HasMoveTarget, _agent.hasPath && !_agent.isStopped);
+    }
+
+    private void OnDisable()
+    {
+        SystemEventManager.Unsubscribe(SystemEventManager.SystemEventType.SpellCast, OnSpellCast);
     }
 }

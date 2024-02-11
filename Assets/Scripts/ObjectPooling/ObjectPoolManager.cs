@@ -16,8 +16,6 @@ public static class ObjectPoolManager
     {
         var allPools = Resources.LoadAll("Data/Pools", typeof(ObjectPool)).Cast<ObjectPool>().ToArray();
 
-        if (!allPools.Any()) return;
-        
         _pools = new Dictionary<ObjectPool.ObjectPoolName, ObjectPool>();
         
         foreach (var objectPool in allPools)

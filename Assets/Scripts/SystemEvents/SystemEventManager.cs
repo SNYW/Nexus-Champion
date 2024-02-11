@@ -7,7 +7,9 @@ namespace SystemEvents
     {
         public enum SystemEventType
         {
-            PlayerMove
+            SpellSelected,
+            SpellDeselected,
+            SpellCast
         }
 
         private static Dictionary<SystemEventType, Action<object>> _eventListeners;
