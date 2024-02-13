@@ -7,10 +7,12 @@ public class NavMeshMovementSystem : MonoBehaviour
     private Camera _mainCamera;
     private NavMeshAgent _agent;
     private Animator _animator;
+    public bool canMove;
     private static readonly int HasMoveTarget = Animator.StringToHash("HasMoveTarget");
 
     private void OnEnable()
     {
+        canMove = true;
         SystemEventManager.Subscribe(SystemEventManager.SystemEventType.SpellCast, OnSpellCast);
     }
 
@@ -29,7 +31,7 @@ public class NavMeshMovementSystem : MonoBehaviour
     private void Update()
     {
         // Check if the left mouse button is pressed
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && canMove)
         {
             // Cast a ray from the mouse position
             Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);

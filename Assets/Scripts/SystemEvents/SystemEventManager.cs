@@ -9,7 +9,8 @@ namespace SystemEvents
         {
             SpellSelected,
             SpellDeselected,
-            SpellCast
+            SpellCast,
+            MoveStateChanged,
         }
 
         private static Dictionary<SystemEventType, Action<object>> _eventListeners;

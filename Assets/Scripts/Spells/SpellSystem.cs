@@ -4,11 +4,28 @@ using UnityEngine;
 
 public class SpellSystem : MonoBehaviour
 {
-
+    public Spell[] spells;
     public GameObject projectileAnchor;
+
+    private Animator _animator;
+    private Vector3 dirToMouse;
+
     private void OnEnable()
     {
-        SystemEventManager.Subscribe(SystemEventManager.SystemEventType.SpellCast, TryCastSpell);
+        _animator = GetComponent<Animator>();
+        SystemEventManager.Subscribe(SystemEventManager.SystemEventType.SpellCast, OnSpellCast);
+    }
+
+    private void OnSpellCast(object obj)
+    {
+        _animator.Play("Attacking");
+        dirToMouse = MouseManager.GetDirectionToMouse(transform.position);
+        transform.parent.forward = dirToMouse;
+    }
+
+    public void CastSpellFromAnimation(int index)
+    {
+        TryCastSpell(spells[index]);
     }
 
     private void TryCastSpell(object spell)
@@ -21,17 +38,16 @@ public class SpellSystem : MonoBehaviour
 
     private void CastProjectileSpell(ProjectileSpell ps)
     {
-        var dirToMouse = MouseManager.GetDirectionToMouse(transform.position);
+       
         var projectile = ObjectPoolManager.GetPool(ps.projectileName).GetPooledObject();
 
         projectile.transform.position = projectileAnchor.transform.position;
         projectile.transform.forward = dirToMouse;
-        transform.forward = dirToMouse;
         projectile.gameObject.SetActive(true);
     }
 
     private void OnDisable()
     {
-        SystemEventManager.Unsubscribe(SystemEventManager.SystemEventType.SpellCast, TryCastSpell);
+        SystemEventManager.Unsubscribe(SystemEventManager.SystemEventType.SpellCast, OnSpellCast);
     }
 }
