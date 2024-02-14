@@ -9,6 +9,7 @@ namespace ObjectPooling
         protected void ReQueue()
         {
             ObjectPoolManager.GetPool(objectPoolName).ReQueue(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

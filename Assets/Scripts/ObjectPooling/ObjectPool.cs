@@ -55,7 +55,6 @@ namespace ObjectPooling
 
         public void ReQueue(GameObject obj)
         {
-            obj.gameObject.SetActive(false);
             _pool.Enqueue(obj);
         }
 
@@ -74,7 +73,8 @@ namespace ObjectPooling
 
         public enum ObjectPoolName
         {
-            FireBall
+            Fireball,
+            FireballExplosion
         }
 
         private void ClearPool()

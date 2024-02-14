@@ -4975,8 +4975,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00a32bcc8bb4257468188dece2e38f4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 12
-  lifetime: 5
+  objectPoolName: 0
+  speed: 20
+  lifetime: 0.7
+  spawnedOnDeath:
+  - {fileID: 8110298470648433421, guid: a593fca02803b9b45977a0249e97cb22, type: 3}
 --- !u!1 &7188768128129727995
 GameObject:
   m_ObjectHideFlags: 0

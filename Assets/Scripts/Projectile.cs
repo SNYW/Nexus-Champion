@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using ObjectPooling;
 using UnityEngine;
@@ -6,11 +7,12 @@ public class Projectile : PooledObject
 {
   public float speed;
   public float lifetime;
+  public PooledObject[] spawnedOnDeath;
 
-  private void Start()
+  private void OnEnable()
   {
     StopAllCoroutines();
-    Invoke(nameof(Deactivate), lifetime);
+    StartCoroutine(Deactivate());
   }
 
   private void Update()
@@ -21,6 +23,18 @@ public class Projectile : PooledObject
   private IEnumerator Deactivate()
   {
     yield return new WaitForSeconds(lifetime);
+    SpawnAllChildren();
     ReQueue();
+  }
+
+  private void SpawnAllChildren()
+  {
+    foreach (var co in spawnedOnDeath)
+    {
+      var child = ObjectPoolManager.GetPool(co.objectPoolName).GetPooledObject();
+      child.transform.position = transform.position;
+      child.transform.rotation = transform.rotation;
+      child.SetActive(true);
+    }
   }
 }
