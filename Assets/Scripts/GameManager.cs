@@ -3,9 +3,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public static GameObject playerUnit;
+    
+        
     void Awake()
     {
+        playerUnit = GameObject.Find("Player Unit");
         SystemEventManager.Init();
         ObjectPoolManager.InitPools();
     }
