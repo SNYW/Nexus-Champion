@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace ObjectPooling
@@ -13,18 +12,17 @@ namespace ObjectPooling
 
         private Transform _pooledObjectParent;
 
-        private List<GameObject> _pool;
+        private Queue<GameObject> _pool;
 
         public GameObject GetPooledObject()
         {
-            if (_pool.Any(go => !go.activeInHierarchy))
+            if (_pool.TryDequeue(out var pooledItem))
             {
-                return _pool.First(go => !go.activeInHierarchy);
+                return pooledItem;
             }
 
             var newPooledObject = Instantiate(pooledObject, Vector2.zero, Quaternion.identity, _pooledObjectParent);
             newPooledObject.SetActive(false);
-            _pool.Add(newPooledObject);
             return newPooledObject;
         }
 
@@ -32,14 +30,13 @@ namespace ObjectPooling
         {
             _pooledObjectParent = GameObject.Find("Pooled Objects").transform;
             
-            if (_pool != null && _pool.Any())
+            if (_pool != null)
             {
-                _pool.ForEach(Destroy);
-                _pool.Clear();
+               ClearPool();
             }
             else
             {
-                _pool = new List<GameObject>();
+                _pool = new Queue<GameObject>();
             }
             
             for (int i = 0; i < minAmount; i++)
@@ -52,23 +49,44 @@ namespace ObjectPooling
                 );
                 
                 newPooledObject.SetActive(false);
-                _pool.Add(newPooledObject);     
+                _pool.Enqueue(newPooledObject);     
             }
         }
 
-        public int GetActiveAmount()
+        public void ReQueue(GameObject obj)
         {
-            return _pool.Count(o => o.activeInHierarchy);
+            obj.gameObject.SetActive(false);
+            _pool.Enqueue(obj);
         }
 
         public List<GameObject> GetAllActive()
         {
-            return _pool.Where(o => o.activeInHierarchy).ToList();
+            var returnPool = new List<GameObject>();
+
+            foreach (var o in _pool)
+            {   
+                if(o.activeSelf)
+                    returnPool.Add(o);
+            }
+
+            return returnPool;
         }
 
         public enum ObjectPoolName
         {
             FireBall
         }
+
+        private void ClearPool()
+        {
+            while (_pool.Count > 0)
+            {
+                GameObject obj = _pool.Dequeue();
+                Destroy(obj);
+            }
+            
+            _pool.Clear();
+        }
+        
     }
 }

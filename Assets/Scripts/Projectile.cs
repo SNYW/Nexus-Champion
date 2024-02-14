@@ -1,12 +1,15 @@
+using System.Collections;
+using ObjectPooling;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class Projectile : PooledObject
 {
   public float speed;
   public float lifetime;
 
   private void Start()
   {
+    StopAllCoroutines();
     Invoke(nameof(Deactivate), lifetime);
   }
 
@@ -15,8 +18,9 @@ public class Projectile : MonoBehaviour
     transform.Translate(Vector3.forward * speed * Time.deltaTime);
   }
 
-  private void Deactivate()
+  private IEnumerator Deactivate()
   {
-    gameObject.SetActive(false);
+    yield return new WaitForSeconds(lifetime);
+    ReQueue();
   }
 }
