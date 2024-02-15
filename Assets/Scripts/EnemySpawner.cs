@@ -7,6 +7,7 @@ public class EnemySpawner : MonoBehaviour
 
     public GameObject enemyToSpawn;
     public Transform spawnAnchor;
+    public float spawnRadius;
 
     public float spawnDelay;
     // Start is called before the first frame update
@@ -20,13 +21,13 @@ public class EnemySpawner : MonoBehaviour
         while (gameObject.activeSelf)
         {
             yield return new WaitForSeconds(spawnDelay);
-            Instantiate(enemyToSpawn, spawnAnchor.transform.position, spawnAnchor.rotation);
-        }
-    }
+            // Generate a random point within the circle
+            Vector2 randomPoint = Random.insideUnitCircle.normalized * spawnRadius;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+            // Instantiate the prefab at the random point
+            Vector3 randomPosition =  spawnAnchor.transform.position + new Vector3(randomPoint.x, 0f, randomPoint.y);
+            
+            Instantiate(enemyToSpawn, randomPosition, spawnAnchor.rotation);
+        }
     }
 }
