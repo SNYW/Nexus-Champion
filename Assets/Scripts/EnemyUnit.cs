@@ -31,7 +31,7 @@ public class EnemyUnit : MonoBehaviour
         }
     }
 
-    public void OnDeath()
+    public void OnDeath(Transform origin)
     {
         StopAllCoroutines();
         
@@ -39,10 +39,17 @@ public class EnemyUnit : MonoBehaviour
         {
             //Instantiate(go, transform.position, transform.rotation, null); //delete
             var obj = ObjectPoolManager.GetPool(go).GetPooledObject();
-            obj.SetActive(true);
             obj.transform.position = transform.position;
             obj.transform.rotation = transform.rotation;
-           
+            obj.SetActive(true);
+
+           if (obj.TryGetComponent<RandomForceOnAwake>(out var component))
+            {
+                
+                component.forceOrigin = origin;
+                component.ApplyRandomForceAndTorque();
+            }
+
 
         }
 

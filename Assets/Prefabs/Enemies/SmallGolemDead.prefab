@@ -48,10 +48,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectPoolName: 2
-  minForce: 15
-  maxForce: 40
+  minForce: 8
+  maxForce: 20
   minTorque: 10
   maxTorque: 15
+  forceOrigin: {fileID: 0}
+  forceMultiplier: 5
   meshRenderer: {fileID: 1840556865102859654}
   dissolveRate: 0.03
   refreshRate: 0.07

@@ -46,7 +46,7 @@ public class Projectile : PooledObject
     foreach (var collider in colliders)
     {
       if (collider.TryGetComponent<EnemyUnit>(out var component)) 
-        component.OnDeath();
+        component.OnDeath(transform);
     }
   }
 

@@ -11,6 +11,9 @@ public class RandomForceOnAwake : PooledObject
     public float maxForce = 20f;
     public float minTorque = 10f;
     public float maxTorque = 20f;
+    public Transform forceOrigin;
+    public float forceMultiplier = 1f;
+
 
     private Rigidbody _rb;
 
@@ -33,24 +36,28 @@ public class RandomForceOnAwake : PooledObject
         _rb.velocity = Vector3.zero;
         // Stop rotation
         _rb.angularVelocity = Vector3.zero;
-        ApplyRandomForceAndTorque();
+        
 
         // Start dissolve effect
         StartCoroutine(DissolveProc());
 
     }
+    
 
     private void Awake()
     {
         meshRenderer.material = Instantiate(meshRenderer.materials[0]);
     }
 
-    void ApplyRandomForceAndTorque()
+    public void ApplyRandomForceAndTorque()
     {
         Rigidbody rb = GetComponentInChildren<Rigidbody>();
         if (rb == null) return;
         
-        Vector3 randomForce = Vector3.up * Random.Range(minForce, maxForce);
+        Vector3 forceDirection = (transform.position - forceOrigin.position).normalized * forceMultiplier;
+        forceDirection.y = 0;
+        
+        Vector3 randomForce = forceDirection * Random.Range(minForce, maxForce);
         rb.AddForce(randomForce, ForceMode.Impulse);
 
         Vector3 randomTorque = Random.insideUnitSphere * Random.Range(minTorque, maxTorque);

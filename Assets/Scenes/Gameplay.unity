@@ -1496,7 +1496,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1451837385
 PrefabInstance:
@@ -2083,10 +2083,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawn
       objectReference: {fileID: 0}
+    - target: {fileID: 21904405111109325, guid: e97e34ca768dca447a86f05c8daa7521,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 553548093274019915, guid: e97e34ca768dca447a86f05c8daa7521,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 553548093274019915, guid: e97e34ca768dca447a86f05c8daa7521,
         type: 3}
@@ -2153,10 +2158,20 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4073598909096203435, guid: e97e34ca768dca447a86f05c8daa7521,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5450887933605554121, guid: e97e34ca768dca447a86f05c8daa7521,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 3.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6049920276385426059, guid: e97e34ca768dca447a86f05c8daa7521,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e97e34ca768dca447a86f05c8daa7521, type: 3}
@@ -2181,7 +2196,7 @@ MonoBehaviour:
   enemyToSpawn: {fileID: 5139188764101688998, guid: fe7b884c84a98cb45bf5351ec2e7d31b,
     type: 3}
   spawnAnchor: {fileID: 9205618237452724561}
-  spawnDelay: 1.5
+  spawnDelay: 0.5
 --- !u!4 &9205618237452724561 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5450887933605554121, guid: e97e34ca768dca447a86f05c8daa7521,
