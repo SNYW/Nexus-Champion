@@ -5009,8 +5009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackRange: 10
   attackCooldown: {x: 1e+26, y: 1e+19}
-  spawnOnDeath:
-  - {fileID: 8507701387349517131, guid: d1c9dbab9d8041041b39fc98fdf8b80d, type: 3}
+  spawnOnDeath: 02000000
 --- !u!136 &1204079918788527456
 CapsuleCollider:
   m_ObjectHideFlags: 0

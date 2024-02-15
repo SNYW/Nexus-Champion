@@ -74,7 +74,8 @@ namespace ObjectPooling
         public enum ObjectPoolName
         {
             Fireball,
-            FireballExplosion
+            FireballExplosion,
+            SmallGolemDeath
         }
 
         private void ClearPool()

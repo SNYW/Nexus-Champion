@@ -1,13 +1,16 @@
 using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using ObjectPooling;
 
 public class EnemyUnit : MonoBehaviour
 {
     public float attackRange;
     public Vector2 attackCooldown;
 
-    public GameObject[] spawnOnDeath;
+    //public GameObject[] spawnOnDeath; //delete
+    public ObjectPool.ObjectPoolName[] spawnOnDeath;
+
     
     private Animator _animator;
     private static readonly int AttackTrigger = Animator.StringToHash("Attack");
@@ -34,9 +37,15 @@ public class EnemyUnit : MonoBehaviour
         
         foreach (var go in spawnOnDeath)
         {
-            Instantiate(go, transform.position, transform.rotation, null);
+            //Instantiate(go, transform.position, transform.rotation, null); //delete
+            var obj = ObjectPoolManager.GetPool(go).GetPooledObject();
+            obj.SetActive(true);
+            obj.transform.position = transform.position;
+            obj.transform.rotation = transform.rotation;
+           
+
         }
-        
+
         Destroy(gameObject);
     }
     
