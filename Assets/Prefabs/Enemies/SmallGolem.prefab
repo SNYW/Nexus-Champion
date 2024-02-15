@@ -4895,10 +4895,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canMove: 0
-  maxFollowRange: 20
-  minFollowRange: 5
+  maxFollowRange: 12
+  minFollowRange: 10
   maxPathFindingUpdateSpeed: 1
-  minPathFindingUpdateSpeed: 10
+  minPathFindingUpdateSpeed: 3
 --- !u!114 &4587951787289463565
 MonoBehaviour:
   m_ObjectHideFlags: 0

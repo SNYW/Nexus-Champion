@@ -50,8 +50,8 @@ MonoBehaviour:
   enemyToSpawn: {fileID: 5139188764101688998, guid: fe7b884c84a98cb45bf5351ec2e7d31b,
     type: 3}
   spawnAnchor: {fileID: 5450887933605554121}
-  spawnRadius: 3
-  spawnDelay: 1
+  spawnRadius: 10
+  spawnDelay: 0.5
 --- !u!208 &9205618237452724563
 NavMeshObstacle:
   m_ObjectHideFlags: 0

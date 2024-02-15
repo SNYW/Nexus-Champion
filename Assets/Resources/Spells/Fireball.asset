@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Fireball
   m_EditorClassIdentifier: 
   spellIcon: {fileID: 21300000, guid: 20b53d3a859c9b942a23574c22d7a6a7, type: 3}
-  coolDown: 0
+  coolDown: 1
   indicatorPrefab: {fileID: 6838668822812109788, guid: 4508740a41a0bde45880a5d8a62777b4,
     type: 3}
-  spellPrefab: {fileID: 7188768128126238706, guid: afaed63ffc04503458443caf002ee4cb,
-    type: 3}
+  projectileName: 0
