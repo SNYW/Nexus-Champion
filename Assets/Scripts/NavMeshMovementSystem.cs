@@ -1,5 +1,4 @@
 using SystemEvents;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -53,6 +52,8 @@ public class NavMeshMovementSystem : MonoBehaviour
             }
         }
         
+        if (Input.GetKeyDown(KeyCode.S) && _agent.hasPath)
+            _agent.isStopped = true;
         _animator.SetBool(HasMoveTarget, _agent.hasPath && !_agent.isStopped);
     }
 

@@ -12,13 +12,14 @@ IEnumerator DissolveProc(float startValue, float targetValue, float startDelay)
     {
         if (meshRenderer.materials?.Length > 0)
         {
-            yield return new WaitForSeconds(startDelay);
             var material = meshRenderer.materials[0];
             material.SetFloat("_dissolveAmount", startValue);
+            
+            yield return new WaitForSeconds(startDelay);
 
             float counter = 0;
 
-            while (material.GetFloat("_dissolveAmount") < targetValue) //exposed _dissolveAmount property from material's shader (material must use the dissolve shader)
+            while (material.GetFloat("_dissolveAmount") < targetValue-0.1f) //exposed _dissolveAmount property from material's shader (material must use the dissolve shader)
             {
                 //Increment dissolveAmount material property
                 
@@ -26,13 +27,12 @@ IEnumerator DissolveProc(float startValue, float targetValue, float startDelay)
 
                 for (int i = 0; i < meshRenderer.materials.Length; i++)
                 {
-                    meshRenderer.materials[i].SetFloat("_dissolveAmount", counter);
+                   material.SetFloat("_dissolveAmount", counter);
                 }
                 yield return new WaitForEndOfFrame(); 
             }
 
             gameObject.SetActive(false);
-
         }
     }
 

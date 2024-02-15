@@ -13,6 +13,7 @@ public class RandomForceOnAwake : PooledObject
     public float maxTorque = 20f;
     public Transform forceOrigin;
     public float forceMultiplier = 1f;
+    public float upForceMultiplier = 3f;
 
     private Rigidbody _rb;
 
@@ -29,10 +30,6 @@ public class RandomForceOnAwake : PooledObject
         _rb.velocity = Vector3.zero;
         // Stop rotation
         _rb.angularVelocity = Vector3.zero;
-        
-
-        // Start dissolve effect
-        //StartCoroutine(DissolveProc());
 
     }
 
@@ -49,7 +46,7 @@ public class RandomForceOnAwake : PooledObject
         Vector3 forceDirection = (transform.position - forceOrigin.position).normalized * forceMultiplier;
         forceDirection.y = 0;
         
-        Vector3 randomForce = forceDirection * Random.Range(minForce, maxForce);
+        Vector3 randomForce = Vector3.up * upForceMultiplier + forceDirection * Random.Range(minForce, maxForce);
         rb.AddForce(randomForce, ForceMode.Impulse);
 
         Vector3 randomTorque = Random.insideUnitSphere * Random.Range(minTorque, maxTorque);

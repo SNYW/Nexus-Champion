@@ -54,8 +54,10 @@ MonoBehaviour:
   minTorque: 10
   maxTorque: 15
   forceOrigin: {fileID: 0}
-  forceMultiplier: 5
+  forceMultiplier: 1
+  upForceMultiplier: 10
   meshRenderer: {fileID: 1840556865102859654}
+  dissolveDelay: 1
 --- !u!136 &6051507420012649310
 CapsuleCollider:
   m_ObjectHideFlags: 0
