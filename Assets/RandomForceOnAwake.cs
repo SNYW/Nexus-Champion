@@ -14,22 +14,14 @@ public class RandomForceOnAwake : PooledObject
     public Transform forceOrigin;
     public float forceMultiplier = 1f;
 
-
     private Rigidbody _rb;
 
     // Define vars for dissolve
     public MeshRenderer meshRenderer;
-    public float dissolveRate = 0.001f;
-    public float refreshRate = 0.002f;
 
 
     private void OnEnable()
     {
-
-        for (int i = 0; i < meshRenderer.materials.Length; i++)
-        {
-            meshRenderer.materials[i].SetFloat("_dissolveAmount", 0);
-        }
 
         _rb = GetComponentInChildren<Rigidbody>(); 
         // Stop movement
@@ -39,10 +31,9 @@ public class RandomForceOnAwake : PooledObject
         
 
         // Start dissolve effect
-        StartCoroutine(DissolveProc());
+        //StartCoroutine(DissolveProc());
 
     }
-    
 
     private void Awake()
     {
@@ -62,28 +53,9 @@ public class RandomForceOnAwake : PooledObject
 
         Vector3 randomTorque = Random.insideUnitSphere * Random.Range(minTorque, maxTorque);
         rb.AddTorque(randomTorque, ForceMode.Impulse);
-    }
 
-    IEnumerator DissolveProc()
-    {
-        if (meshRenderer.materials?.Length > 0)
-        {
-            float counter = 0;
+        GetComponent<DissolveController>().DissolveOut(1);
 
-            while (meshRenderer.materials[0].GetFloat("_dissolveAmount") < 1) //exposed _dissolveAmount property from material's shader (material must use the dissolve shader)
-            {
-                //Increment dissolveAmount material property
-                counter += dissolveRate;
-                for (int i = 0; i < meshRenderer.materials.Length; i++)
-                {
-                    meshRenderer.materials[i].SetFloat("_dissolveAmount", counter);
-                }
-                yield return new WaitForSeconds(refreshRate); //delay between steps
-            }
-
-            gameObject.SetActive(false);
-
-        }
     }
 
 
@@ -92,5 +64,6 @@ public class RandomForceOnAwake : PooledObject
         StopAllCoroutines();
         ReQueue();
     }
+
 
 }

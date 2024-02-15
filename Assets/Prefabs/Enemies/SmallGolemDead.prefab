@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1467103555930117251}
   - component: {fileID: 6051507420012649310}
   - component: {fileID: 1630968593495056069}
+  - component: {fileID: 8284445570311987975}
   m_Layer: 6
   m_Name: SmallGolemDead
   m_TagString: Untagged
@@ -55,8 +56,6 @@ MonoBehaviour:
   forceOrigin: {fileID: 0}
   forceMultiplier: 5
   meshRenderer: {fileID: 1840556865102859654}
-  dissolveRate: 0.03
-  refreshRate: 0.07
 --- !u!136 &6051507420012649310
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -87,6 +86,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8284445570311987975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8507701387349517131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93f0cc98206851e429a109d14805d592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderer: {fileID: 1840556865102859654}
+  dissolveRate: 0.005
 --- !u!1 &8507701388059934983
 GameObject:
   m_ObjectHideFlags: 0

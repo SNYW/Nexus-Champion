@@ -7,12 +7,12 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FloorPortalBot
-  m_Shader: {fileID: -6465566751694194690, guid: b88e8c07055e2264dac8e4c5b5411929,
+  m_Name: Portal
+  m_Shader: {fileID: -6465566751694194690, guid: d5fe88b14025d664c9c5a2efcceabf7a,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
-  m_LightmapFlags: 2
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -37,11 +37,9 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _glowPower: 0
-    m_Colors:
-    - _glowColour: {r: 15.992544, g: 15.194939, b: 644.2655, a: 0}
+    m_Colors: []
   m_BuildTextureStacks: []
---- !u!114 &6140854657924452300
+--- !u!114 &1525629014258268222
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
