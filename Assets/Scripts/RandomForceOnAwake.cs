@@ -52,8 +52,7 @@ public class RandomForceOnAwake : PooledObject
         Vector3 randomTorque = Random.insideUnitSphere * Random.Range(minTorque, maxTorque);
         rb.AddTorque(randomTorque, ForceMode.Impulse);
 
-        GetComponent<DissolveController>().DissolveOut(dissolveDelay);
-
+        GetComponent<DissolveController>().DissolveOut(dissolveDelay, null, false);
     }
 
 

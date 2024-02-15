@@ -11,10 +11,12 @@ public class SpellSystem : MonoBehaviour
 
     private Animator _animator;
     private Vector3 dirToMouse;
+    private CastIndicator _indicator;
 
     private void OnEnable()
     {
-        _animator = GetComponent<Animator>();
+        _animator = GetComponentInChildren<Animator>();
+        _indicator = GetComponentInChildren<CastIndicator>();
         SystemEventManager.Subscribe(SystemEventManager.SystemEventType.SpellCast, OnSpellCast);
     }
 
@@ -22,7 +24,7 @@ public class SpellSystem : MonoBehaviour
     {
         _animator.Play("Attacking");
         dirToMouse = MouseManager.GetDirectionToMouse(transform.position, mask);
-        transform.parent.forward = dirToMouse;
+        transform.forward = dirToMouse;
     }
 
     public void CastSpellFromAnimation(int index)
@@ -44,7 +46,7 @@ public class SpellSystem : MonoBehaviour
         var projectile = ObjectPoolManager.GetPool(ps.projectileName).GetPooledObject();
 
         projectile.transform.position = projectileAnchor.transform.position;
-        projectile.transform.forward = dirToMouse;
+        projectile.transform.forward = _indicator.transform.forward;
         projectile.gameObject.SetActive(true);
     }
 

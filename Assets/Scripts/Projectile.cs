@@ -45,7 +45,7 @@ public class Projectile : PooledObject
     var colliders = Physics.OverlapSphere(transform.position, hitRadius, hitmask);
     foreach (var collider in colliders)
     {
-      if (collider.TryGetComponent<EnemyUnit>(out var component)) 
+      if (collider.TryGetComponent<EnemyUnit>(out var component) && component.isActive) 
         component.OnDeath(transform);
     }
   }

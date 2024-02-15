@@ -7,18 +7,33 @@ public class EnemyUnit : MonoBehaviour
 {
     public float attackRange;
     public Vector2 attackCooldown;
-
-    //public GameObject[] spawnOnDeath; //delete
+    public Collider hitCollider;
     public ObjectPool.ObjectPoolName[] spawnOnDeath;
 
     
     private Animator _animator;
+    private DissolveController _dissolveController;
+    private EnemyUnitNavmeshAgent _agent;
     private static readonly int AttackTrigger = Animator.StringToHash("Attack");
-    
+    public bool isActive;
 
     private void OnEnable()
     {
+        isActive = false;
+        _agent = GetComponent<EnemyUnitNavmeshAgent>();
+        _agent.canMove = false;
         _animator = GetComponentInChildren<Animator>();
+        hitCollider.enabled = false;
+        _dissolveController = GetComponentInChildren<DissolveController>();
+        
+        _dissolveController.DissolveIn(0, Enable);
+    }
+
+    private void Enable()
+    {
+        isActive = true;
+        _agent.Enable();
+        hitCollider.enabled = true;
         StartCoroutine(Attack());
     }
 
@@ -37,8 +52,9 @@ public class EnemyUnit : MonoBehaviour
         
         foreach (var go in spawnOnDeath)
         {
-            //Instantiate(go, transform.position, transform.rotation, null); //delete
             var obj = ObjectPoolManager.GetPool(go).GetPooledObject();
+            if(obj == null) return;
+            
             obj.transform.position = transform.position;
             obj.transform.rotation = transform.rotation;
             obj.SetActive(true);
@@ -49,8 +65,6 @@ public class EnemyUnit : MonoBehaviour
                 component.forceOrigin = origin;
                 component.ApplyRandomForceAndTorque();
             }
-
-
         }
 
         Destroy(gameObject);

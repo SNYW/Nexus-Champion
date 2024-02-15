@@ -1,8 +1,6 @@
-using System.Xml.Schema;
 using Spells;
 using SystemEvents;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class CastIndicator : MonoBehaviour
 {

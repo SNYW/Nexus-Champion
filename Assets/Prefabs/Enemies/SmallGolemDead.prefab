@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 1840556865102859654}
   dissolveRate: 0.005
+  tolerance: 0.1
 --- !u!1 &8507701388059934983
 GameObject:
   m_ObjectHideFlags: 0

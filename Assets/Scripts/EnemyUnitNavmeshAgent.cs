@@ -1,11 +1,13 @@
 using System;
 using System.Collections;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
 
 public class EnemyUnitNavmeshAgent : MonoBehaviour
 {
+   public bool canMove;
    public float maxFollowRange;
    public float minFollowRange;
    public float maxPathFindingUpdateSpeed;
@@ -19,7 +21,11 @@ public class EnemyUnitNavmeshAgent : MonoBehaviour
          _agent = GetComponent<NavMeshAgent>();
 
       _playerUnit = GameManager.playerUnit;
+   }
 
+   public void Enable()
+   {
+      canMove = true;
       StartCoroutine(GetPath());
    }
 
