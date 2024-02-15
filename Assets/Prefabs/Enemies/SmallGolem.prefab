@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4956486220930868417}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.596, z: 0}
+  m_LocalPosition: {x: 0, y: 2.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4911,8 +4911,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e1a87dcd7962f9449b0a11685352d54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 10
-  attackCooldown: {x: 1e+26, y: 1e+19}
+  attackRange: 5
+  attackCooldown: {x: 5, y: 9}
   hitCollider: {fileID: 1204079918788527456}
   spawnOnDeath: 02000000
   isActive: 0
@@ -4986,7 +4986,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6824451927792332237}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.182, z: 0}
+  m_LocalPosition: {x: 0, y: 1.258, z: 0}
   m_LocalScale: {x: 0.21, y: 0.21, z: 0.21}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5022,17 +5022,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: cf67aba16e1b2fe44b299da52c3b3c3a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 54.91
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cf67aba16e1b2fe44b299da52c3b3c3a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -111.3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cf67aba16e1b2fe44b299da52c3b3c3a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12.57
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cf67aba16e1b2fe44b299da52c3b3c3a,
         type: 3}
