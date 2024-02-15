@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 338189549}
   - component: {fileID: 338189548}
   - component: {fileID: 338189547}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,13 +108,13 @@ GameObject:
   - component: {fileID: 8208996200387970909}
   - component: {fileID: 1438216393}
   - component: {fileID: 1438216392}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8208996200387970909
 Transform:
   m_ObjectHideFlags: 0
@@ -4927,11 +4927,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6757355931475936036}
-  - component: {fileID: 4853110443702312060}
   - component: {fileID: 4853110443702312059}
   - component: {fileID: 4853110443702312061}
   - component: {fileID: 4587951787289463565}
-  m_Layer: 0
+  - component: {fileID: 1204079918788527456}
+  - component: {fileID: 3589158936300468372}
+  m_Layer: 9
   m_Name: SmallGolem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4956,19 +4957,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &4853110443702312060
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5139188764101688998}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.32
-  m_Center: {x: 0, y: 1.14, z: -0.12}
 --- !u!195 &4853110443702312059
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4987,7 +4975,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 1.52
+  m_Height: 3.45
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -5014,13 +5002,45 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5139188764101688998}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e1a87dcd7962f9449b0a11685352d54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackRange: 10
-  attackCooldown: {x: 10, y: 15}
+  attackCooldown: {x: 1e+26, y: 1e+19}
+  spawnOnDeath:
+  - {fileID: 8507701387349517131, guid: d1c9dbab9d8041041b39fc98fdf8b80d, type: 3}
+--- !u!136 &1204079918788527456
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5139188764101688998}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.51392275
+  m_Height: 5.1357427
+  m_Direction: 1
+  m_Center: {x: 0.013922669, y: 2.067872, z: -0.27}
+--- !u!54 &3589158936300468372
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5139188764101688998}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6824451927792332237
 GameObject:
   m_ObjectHideFlags: 0
@@ -5031,7 +5051,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5013937890356680869}
   - component: {fileID: 6974465590028682435}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ModelParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5144,6 +5164,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7671042717862404870, guid: cf67aba16e1b2fe44b299da52c3b3c3a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: -7324176474692276197, guid: cf67aba16e1b2fe44b299da52c3b3c3a,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -5153,6 +5178,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -89.98021
+      objectReference: {fileID: 0}
+    - target: {fileID: -4752569875425264130, guid: cf67aba16e1b2fe44b299da52c3b3c3a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -4224710721220862137, guid: cf67aba16e1b2fe44b299da52c3b3c3a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -2763626843536717666, guid: cf67aba16e1b2fe44b299da52c3b3c3a,
         type: 3}
@@ -5169,15 +5204,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 89.98021
       objectReference: {fileID: 0}
+    - target: {fileID: 516130395374284424, guid: cf67aba16e1b2fe44b299da52c3b3c3a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cf67aba16e1b2fe44b299da52c3b3c3a,
         type: 3}
       propertyPath: m_Name
       value: Golem_Small_002
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cf67aba16e1b2fe44b299da52c3b3c3a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428400527546488413, guid: cf67aba16e1b2fe44b299da52c3b3c3a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3668985032988853679, guid: cf67aba16e1b2fe44b299da52c3b3c3a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4603913122978368324, guid: cf67aba16e1b2fe44b299da52c3b3c3a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 89.98021
+      objectReference: {fileID: 0}
+    - target: {fileID: 6764521972560716553, guid: cf67aba16e1b2fe44b299da52c3b3c3a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf67aba16e1b2fe44b299da52c3b3c3a, type: 3}

@@ -1,9 +1,11 @@
 using Spells;
 using SystemEvents;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class SpellSystem : MonoBehaviour
 {
+    public LayerMask mask;
     public Spell[] spells;
     public GameObject projectileAnchor;
 
@@ -19,7 +21,7 @@ public class SpellSystem : MonoBehaviour
     private void OnSpellCast(object obj)
     {
         _animator.Play("Attacking");
-        dirToMouse = MouseManager.GetDirectionToMouse(transform.position);
+        dirToMouse = MouseManager.GetDirectionToMouse(transform.position, mask);
         transform.parent.forward = dirToMouse;
     }
 

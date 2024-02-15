@@ -1,3 +1,4 @@
+using System.Xml.Schema;
 using Spells;
 using SystemEvents;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class CastIndicator : MonoBehaviour
 {
     private Camera _mainCamera;
     public GameObject indicatorParent;
+    public LayerMask mask;
 
     private GameObject _indicatorObject;
     private void OnEnable()
@@ -22,7 +24,7 @@ public class CastIndicator : MonoBehaviour
         if (obj is not Spell spell) return;
         
         indicatorParent.SetActive(true);
-        transform.forward = MouseManager.GetDirectionToMouse(transform.position);
+        transform.forward = MouseManager.GetDirectionToMouse(transform.position, mask);
         _indicatorObject = Instantiate(spell.indicatorPrefab, indicatorParent.transform);
     }
 
@@ -35,7 +37,7 @@ public class CastIndicator : MonoBehaviour
     {
         if (_indicatorObject == null) return;
 
-        transform.forward = MouseManager.GetDirectionToMouse(transform.position);
+        transform.forward = MouseManager.GetDirectionToMouse(transform.position, mask);
     }
 
     private void OnDisable()

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 949929173124337470}
   - component: {fileID: 1771025675983273642}
   - component: {fileID: 7664350001302617469}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 7188768127015519593}
   - component: {fileID: 7188768127015519595}
   - component: {fileID: 7188768127015519594}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4937,7 +4937,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7188768128126238707}
   - component: {fileID: 3984832206811765384}
-  m_Layer: 0
+  - component: {fileID: 4273282444496632156}
+  m_Layer: 7
   m_Name: FireBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4976,10 +4977,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectPoolName: 0
+  hitOnAwake: 0
+  hitmask:
+    serializedVersion: 2
+    m_Bits: 512
   speed: 20
   lifetime: 0.7
+  hitRadius: 0
   spawnedOnDeath:
   - {fileID: 8110298470648433421, guid: a593fca02803b9b45977a0249e97cb22, type: 3}
+--- !u!135 &4273282444496632156
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7188768128126238706}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7188768128129727995
 GameObject:
   m_ObjectHideFlags: 0
@@ -4992,7 +5011,7 @@ GameObject:
   - component: {fileID: 7188768128129727991}
   - component: {fileID: 7188768128129727990}
   - component: {fileID: 7188768128129727989}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5158,6 +5177,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: VFX_FB1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5504196843736911283, guid: 49a19d686b83cde4ba5396d48064c326,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5504196843736911283, guid: 49a19d686b83cde4ba5396d48064c326,
         type: 3}

@@ -5,12 +5,12 @@ using UnityEngine.AI;
 
 public static class MouseManager
 {
-   public static Vector3 GetDirectionToMouse(Vector3 rootPosition)
+   public static Vector3 GetDirectionToMouse(Vector3 rootPosition, LayerMask layerMask)
    {
        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
          // Check if the ray hits something
-         if (!Physics.Raycast(ray, out var hit)) return Vector3.forward;
+         if (!Physics.Raycast(ray, out var hit, int.MaxValue,layerMask)) return Vector3.forward;
         
          // Check if the hit point is on the NavMesh
          if (!NavMesh.SamplePosition(hit.point, out var navMeshHit, 1.0f, NavMesh.AllAreas)) return Vector3.forward;

@@ -156,6 +156,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectPoolName: 1
+  hitOnAwake: 1
+  hitmask:
+    serializedVersion: 2
+    m_Bits: 512
   speed: 0
   lifetime: 2
+  hitRadius: 4
   spawnedOnDeath: []

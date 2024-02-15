@@ -1,9 +1,11 @@
 using SystemEvents;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class NavMeshMovementSystem : MonoBehaviour
 {
+    public LayerMask rayLayer;
     private Camera _mainCamera;
     private NavMeshAgent _agent;
     private Animator _animator;
@@ -38,7 +40,7 @@ public class NavMeshMovementSystem : MonoBehaviour
             RaycastHit hit;
 
             // Check if the ray hits something
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit, int.MaxValue, rayLayer))
             {
                 // Check if the hit point is on the NavMesh
                 NavMeshHit navMeshHit;
