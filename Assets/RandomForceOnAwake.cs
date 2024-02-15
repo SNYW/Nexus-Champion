@@ -18,6 +18,7 @@ public class RandomForceOnAwake : PooledObject
 
     // Define vars for dissolve
     public MeshRenderer meshRenderer;
+    public float dissolveDelay = 1;
 
 
     private void OnEnable()
@@ -54,7 +55,7 @@ public class RandomForceOnAwake : PooledObject
         Vector3 randomTorque = Random.insideUnitSphere * Random.Range(minTorque, maxTorque);
         rb.AddTorque(randomTorque, ForceMode.Impulse);
 
-        GetComponent<DissolveController>().DissolveOut(1);
+        GetComponent<DissolveController>().DissolveOut(dissolveDelay);
 
     }
 

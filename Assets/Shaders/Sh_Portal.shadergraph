@@ -1373,12 +1373,12 @@
         "m_Id": "59d586c88a8f46bfaa913b345b767cee"
     },
     "m_AllowMaterialOverride": false,
-    "m_SurfaceType": 0,
+    "m_SurfaceType": 1,
     "m_ZTestMode": 4,
     "m_ZWriteControl": 0,
     "m_AlphaMode": 0,
     "m_RenderFace": 2,
-    "m_AlphaClip": true,
+    "m_AlphaClip": false,
     "m_CastShadows": true,
     "m_ReceiveShadows": true,
     "m_CustomEditorGUI": "",
@@ -1763,9 +1763,9 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "r": 0.22934186458587647,
-        "g": 0.9938147664070129,
-        "b": 6.498019218444824,
+        "r": 1.8829587697982789,
+        "g": 8.069823265075684,
+        "b": 51.37787628173828,
         "a": 0.0
     },
     "isMainColor": false,
