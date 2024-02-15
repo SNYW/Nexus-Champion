@@ -10,17 +10,24 @@ Material:
   m_Name: Portal
   m_Shader: {fileID: -6465566751694194690, guid: d5fe88b14025d664c9c5a2efcceabf7a,
     type: 3}
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
+  stringTagMap:
+    RenderType: Transparent
+  disabledShaderPasses:
+  - DepthOnly
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _SampleTexture2D_0b2d937922fc469eb1849ff8157877a0_Texture_1:
+        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -35,9 +42,25 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AlphaClip: 0
+    - _Blend: 0
+    - _CastShadows: 1
+    - _Cull: 2
+    - _DstBlend: 10
     - _QueueControl: 0
     - _QueueOffset: 0
-    m_Colors: []
+    - _ReceiveShadows: 1
+    - _SrcBlend: 5
+    - _Surface: 1
+    - _WorkflowMode: 1
+    - _ZTest: 4
+    - _ZWrite: 0
+    - _ZWriteControl: 0
+    - _alphaClip: 0.016
+    - _twirlSpeed: 0.2
+    - _twirlStrength: 11.51
+    m_Colors:
+    - _colour: {r: 27.332018, g: 79.90468, b: 445.72195, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &1525629014258268222
 MonoBehaviour:
