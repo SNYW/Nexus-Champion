@@ -13,6 +13,12 @@ public class RandomForceOnAwake : MonoBehaviour
 
     private Rigidbody _rb;
 
+    // Define vars for dissolve
+    public MeshRenderer meshRenderer;
+    private Material[] materials;
+    public float dissolveRate = 0.001f;
+    public float refreshRate = 0.002f;
+
     private void Awake()
     {
         _rb = GetComponentInChildren<Rigidbody>(); 
@@ -21,6 +27,13 @@ public class RandomForceOnAwake : MonoBehaviour
         // Stop rotation
         _rb.angularVelocity = Vector3.zero;
         ApplyRandomForceAndTorque();
+
+        // Check for materials then define
+        if (meshRenderer != null)
+            materials = meshRenderer.materials;
+        // Start dissolve effect
+        StartCoroutine(DissolveProc());
+
     }
 
     void ApplyRandomForceAndTorque()
@@ -33,5 +46,24 @@ public class RandomForceOnAwake : MonoBehaviour
 
         Vector3 randomTorque = Random.insideUnitSphere * Random.Range(minTorque, maxTorque);
         rb.AddTorque(randomTorque, ForceMode.Impulse);
+    }
+
+    IEnumerator DissolveProc()
+    {
+        if (materials.Length > 0)
+        {
+            float counter = 0;
+
+            while (materials[0].GetFloat("_dissolveAmount") < 1) //exposed _dissolveAmount property from material's shader (material must use the dissolve shader)
+            {
+                //Increment dissolveAmount material property
+                counter += dissolveRate;
+                for (int i = 0; i < materials.Length; i++)
+                {
+                    materials[i].SetFloat("_dissolveAmount", counter);
+                }
+                yield return new WaitForSeconds(refreshRate); //delay between steps
+            }
+        }
     }
 }
