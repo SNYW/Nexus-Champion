@@ -9,9 +9,10 @@ public class Projectile : PooledObject
   public LayerMask hitmask;
   public float speed;
   public float lifetime;
+  public int damage;
   public float hitRadius;
   public PooledObject[] spawnedOnDeath;
-  
+
 
   private void OnEnable()
   {
@@ -46,7 +47,7 @@ public class Projectile : PooledObject
     foreach (var collider in colliders)
     {
       if (collider.TryGetComponent<EnemyUnit>(out var component) && component.isActive) 
-        component.OnDeath(transform);
+        component.OnHit(transform, damage);
     }
   }
 

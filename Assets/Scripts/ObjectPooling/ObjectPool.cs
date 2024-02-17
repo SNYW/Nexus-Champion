@@ -13,6 +13,14 @@ namespace ObjectPooling
         private Transform _pooledObjectParent;
 
         private Queue<GameObject> _pool;
+        
+        public enum ObjectPoolName
+        {
+            Fireball,
+            FireballExplosion,
+            SmallGolemDeath,
+            FloatingText
+        }
 
         public GameObject GetPooledObject()
         {
@@ -69,13 +77,6 @@ namespace ObjectPooling
             }
 
             return returnPool;
-        }
-
-        public enum ObjectPoolName
-        {
-            Fireball,
-            FireballExplosion,
-            SmallGolemDeath
         }
 
         private void ClearPool()

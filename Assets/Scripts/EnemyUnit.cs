@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using ObjectPooling;
+using SystemEvents;
 
 public class EnemyUnit : MonoBehaviour
 {
@@ -16,6 +17,18 @@ public class EnemyUnit : MonoBehaviour
     private EnemyUnitNavmeshAgent _agent;
     private static readonly int AttackTrigger = Animator.StringToHash("Attack");
     public bool isActive;
+
+    public class EnemyDamageEvent 
+    {
+        public EnemyUnit unit;
+        public int damageAmount;
+
+        public EnemyDamageEvent(EnemyUnit unit, int damageAmount)
+        {
+            this.unit = unit;
+            this.damageAmount = damageAmount;
+        }
+    }
 
     private void OnEnable()
     {
@@ -44,6 +57,13 @@ public class EnemyUnit : MonoBehaviour
             yield return new WaitForSeconds(Random.Range(attackCooldown.x, attackCooldown.y));
             _animator.SetTrigger(AttackTrigger);
         }
+    }
+
+    public void OnHit(Transform origin, int damageAmount)
+    {
+        var damageEvent = new EnemyDamageEvent(this, damageAmount);
+        SystemEventManager.RaiseEvent(SystemEventManager.SystemEventType.EnemyDamaged, damageEvent);
+        OnDeath(origin);
     }
 
     public void OnDeath(Transform origin)

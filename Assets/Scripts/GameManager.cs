@@ -1,3 +1,4 @@
+using System;
 using SystemEvents;
 using UnityEngine;
 
@@ -11,5 +12,11 @@ public class GameManager : MonoBehaviour
         playerUnit = GameObject.Find("Player Unit");
         SystemEventManager.Init();
         ObjectPoolManager.InitPools();
+        
+    }
+
+    private void Start()
+    {
+        FloatingTextManager.Init();
     }
 }
