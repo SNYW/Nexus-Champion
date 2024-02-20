@@ -12,8 +12,7 @@ public class Projectile : PooledObject
   public int damage;
   public float hitRadius;
   public PooledObject[] spawnedOnDeath;
-
-
+  
   private void OnEnable()
   {
     StopAllCoroutines();
@@ -39,7 +38,7 @@ public class Projectile : PooledObject
     Die();
   }
 
-  private void DealDamage()
+  protected virtual void DealDamage()
   {
     if (hitRadius == 0) return;
     

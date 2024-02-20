@@ -1,11 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
+using ObjectPooling;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-
-    public GameObject enemyToSpawn;
+    public ObjectPool.ObjectPoolName poolToSpawn;
     public Transform spawnAnchor;
     public float spawnRadius;
 
@@ -26,8 +25,11 @@ public class EnemySpawner : MonoBehaviour
 
             // Instantiate the prefab at the random point
             Vector3 randomPosition =  spawnAnchor.transform.position + new Vector3(randomPoint.x, 0f, randomPoint.y);
-            
-            Instantiate(enemyToSpawn, randomPosition, spawnAnchor.rotation);
+
+            var newSpawn = ObjectPoolManager.GetPool(poolToSpawn).GetPooledObject();
+            newSpawn.transform.position = randomPosition;
+            newSpawn.transform.rotation = spawnAnchor.rotation;
+            newSpawn.gameObject.SetActive(true);
         }
     }
 }
