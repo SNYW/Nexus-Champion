@@ -20,7 +20,8 @@ namespace ObjectPooling
             FireballExplosion,
             SmallGolemDeath,
             FloatingText,
-            SmallGolem
+            SmallGolem,
+            EnemyFireball
         }
 
         public GameObject GetPooledObject()

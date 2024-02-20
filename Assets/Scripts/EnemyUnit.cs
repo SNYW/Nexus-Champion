@@ -6,20 +6,23 @@ using SystemEvents;
 
 public class EnemyUnit : PooledObject
 {
+    public bool isActive;
     public int maxHealth;
     public int currentHealth;
     public float attackRange;
+    public Transform castAnchor;
+    public ObjectPool.ObjectPoolName projectilePoolName;
     public Vector2 attackCooldown;
     public Collider hitCollider;
     public ObjectPool.ObjectPoolName[] spawnOnDeath;
-
     
     private Animator _animator;
     private DissolveController _dissolveController;
     private EnemyUnitNavmeshAgent _agent;
     private UnitHealthbar _healthbar;
+    
     private static readonly int AttackTrigger = Animator.StringToHash("Attack");
-    public bool isActive;
+    private static readonly int IsActive = Animator.StringToHash("isActive");
 
     public class EnemyDamageEvent 
     {
@@ -62,8 +65,19 @@ public class EnemyUnit : PooledObject
         while (gameObject.activeSelf)
         {
             yield return new WaitForSeconds(Random.Range(attackCooldown.x, attackCooldown.y));
+            if (!(Vector3.Distance(transform.position, GameManager.playerUnit.transform.position) <= attackRange)) continue;
+            
+            transform.forward = GameManager.playerUnit.transform.position - transform.position;
             _animator.SetTrigger(AttackTrigger);
         }
+    }
+
+    public void FireProjectile()
+    {
+        var projectile = ObjectPoolManager.GetPool(projectilePoolName).GetPooledObject();
+        projectile.transform.position = castAnchor.transform.position;
+        projectile.transform.forward = transform.forward;
+        projectile.gameObject.SetActive(true);
     }
 
     public void OnHit(Transform origin, int damageAmount)
@@ -75,6 +89,11 @@ public class EnemyUnit : PooledObject
         
         if(currentHealth <= 0)
             OnDeath(origin);
+    }
+
+    private void Update()
+    {
+        _animator.SetBool(IsActive, isActive);
     }
 
     public void OnDeath(Transform origin)
@@ -104,5 +123,32 @@ public class EnemyUnit : PooledObject
     private void OnDisable()
     {
         StopAllCoroutines();
+    }
+    
+    void OnDrawGizmos()
+    {
+    
+        var segments = 36;
+        Vector3 center = transform.position;
+
+        float angleIncrement = 360f / segments;
+        float currentAngle = 0f;
+
+        Vector3 lastPoint = center + new Vector3(attackRange, 0f, 0f);
+       
+        for (int i = 0; i < segments; i++)
+        {
+            currentAngle += angleIncrement;
+            float newX = center.x + Mathf.Cos(Mathf.Deg2Rad * currentAngle) * attackRange;
+            float newZ = center.z + Mathf.Sin(Mathf.Deg2Rad * currentAngle) * attackRange;
+            Vector3 newPoint = new Vector3(newX, center.y, newZ);
+
+            Debug.DrawLine(lastPoint, newPoint, Color.red);
+
+            lastPoint = newPoint;
+        }
+        
+        // Connect the last point to the first point to complete the circle
+        Debug.DrawLine(lastPoint, center + new Vector3(attackRange, 0f, 0f), Color.red);
     }
 }

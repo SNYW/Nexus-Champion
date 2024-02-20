@@ -29,6 +29,11 @@ public class EnemyUnitNavmeshAgent : MonoBehaviour
       StartCoroutine(GetPath());
    }
 
+   private void Update()
+   {
+      _agent.isStopped = !canMove;
+   }
+
    private IEnumerator GetPath()
    {
       while (gameObject.activeSelf)
