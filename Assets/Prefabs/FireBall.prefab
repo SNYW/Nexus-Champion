@@ -4983,9 +4983,9 @@ MonoBehaviour:
     m_Bits: 512
   speed: 20
   lifetime: 0.7
-  hitRadius: 0
-  spawnedOnDeath:
-  - {fileID: 8110298470648433421, guid: a593fca02803b9b45977a0249e97cb22, type: 3}
+  damage: 50
+  hitRadius: 4
+  spawnedOnDeath: []
 --- !u!135 &4273282444496632156
 SphereCollider:
   m_ObjectHideFlags: 0

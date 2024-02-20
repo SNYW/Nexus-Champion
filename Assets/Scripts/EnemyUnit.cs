@@ -6,6 +6,8 @@ using SystemEvents;
 
 public class EnemyUnit : MonoBehaviour
 {
+    public int maxHealth;
+    public int currentHealth;
     public float attackRange;
     public Vector2 attackCooldown;
     public Collider hitCollider;
@@ -15,6 +17,7 @@ public class EnemyUnit : MonoBehaviour
     private Animator _animator;
     private DissolveController _dissolveController;
     private EnemyUnitNavmeshAgent _agent;
+    private UnitHealthbar _healthbar;
     private static readonly int AttackTrigger = Animator.StringToHash("Attack");
     public bool isActive;
 
@@ -33,13 +36,17 @@ public class EnemyUnit : MonoBehaviour
     private void OnEnable()
     {
         isActive = false;
+        _healthbar = GetComponentInChildren<UnitHealthbar>();
         _agent = GetComponent<EnemyUnitNavmeshAgent>();
         _agent.canMove = false;
         _animator = GetComponentInChildren<Animator>();
         hitCollider.enabled = false;
-        _dissolveController = GetComponentInChildren<DissolveController>();
         
+        _dissolveController = GetComponentInChildren<DissolveController>();
         _dissolveController.DissolveIn(0, Enable);
+        
+        currentHealth = maxHealth;
+        _healthbar.Reset();
     }
 
     private void Enable()
@@ -62,8 +69,12 @@ public class EnemyUnit : MonoBehaviour
     public void OnHit(Transform origin, int damageAmount)
     {
         var damageEvent = new EnemyDamageEvent(this, damageAmount);
+        currentHealth -= damageAmount;
         SystemEventManager.RaiseEvent(SystemEventManager.SystemEventType.EnemyDamaged, damageEvent);
-        OnDeath(origin);
+        _healthbar.UpdateHealthIndicator(currentHealth, maxHealth);
+        
+        if(currentHealth <= 0)
+            OnDeath(origin);
     }
 
     public void OnDeath(Transform origin)
