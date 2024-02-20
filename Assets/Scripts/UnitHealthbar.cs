@@ -7,10 +7,18 @@ public class UnitHealthbar : MonoBehaviour
 {
     public Image healthIndicator;
     public Image healthIndicatorSecondary;
+    public GameObject canvas;
     public float lerpSpeed;
+
+    private void OnEnable()
+    {
+        canvas.SetActive(false);
+    }
 
     public void UpdateHealthIndicator(int currentHealth, int maxHealth)
     {
+        canvas.SetActive(true);
+        
         var targetValue = (float)currentHealth / maxHealth;
         
         LeanTween.value(gameObject,healthIndicator.fillAmount, targetValue, lerpSpeed)
@@ -29,4 +37,5 @@ public class UnitHealthbar : MonoBehaviour
         healthIndicator.fillAmount = 1;
         healthIndicatorSecondary.fillAmount = 1;
     }
+
 }

@@ -364,6 +364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthIndicator: {fileID: 5093637719453347349}
   healthIndicatorSecondary: {fileID: 763616710040371363}
+  canvas: {fileID: 4997004064214656813}
   lerpSpeed: 0.2
 --- !u!114 &3689337102570427162
 MonoBehaviour:

@@ -4984,7 +4984,7 @@ MonoBehaviour:
   speed: 20
   lifetime: 0.7
   damage: 50
-  hitRadius: 100
+  hitRadius: 5
   spawnedOnDeath: []
 --- !u!135 &4273282444496632156
 SphereCollider:
