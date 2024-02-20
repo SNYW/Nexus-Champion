@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,11 +13,11 @@ public class UnitHealthbar : MonoBehaviour
     {
         var targetValue = (float)currentHealth / maxHealth;
         
-        LeanTween.value(healthIndicator.fillAmount, targetValue, lerpSpeed)
+        LeanTween.value(gameObject,healthIndicator.fillAmount, targetValue, lerpSpeed)
             .setOnUpdate(val => healthIndicator.fillAmount = val)
             .setEaseLinear();
         
-        LeanTween.value(healthIndicatorSecondary.fillAmount, targetValue, lerpSpeed)
+        LeanTween.value(gameObject,healthIndicatorSecondary.fillAmount, targetValue, lerpSpeed)
             .setOnUpdate(val => healthIndicatorSecondary.fillAmount = val)
             .setEaseLinear()
             .setDelay(lerpSpeed);
@@ -23,6 +25,7 @@ public class UnitHealthbar : MonoBehaviour
 
     public void Reset()
     {
+        LeanTween.cancel(gameObject);
         healthIndicator.fillAmount = 1;
         healthIndicatorSecondary.fillAmount = 1;
     }

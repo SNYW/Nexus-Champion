@@ -4,7 +4,7 @@ using Random = UnityEngine.Random;
 using ObjectPooling;
 using SystemEvents;
 
-public class EnemyUnit : MonoBehaviour
+public class EnemyUnit : PooledObject
 {
     public int maxHealth;
     public int currentHealth;
@@ -98,7 +98,7 @@ public class EnemyUnit : MonoBehaviour
             }
         }
 
-        Destroy(gameObject);
+        ReQueue();
     }
     
     private void OnDisable()
