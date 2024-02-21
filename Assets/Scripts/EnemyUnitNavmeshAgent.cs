@@ -39,7 +39,7 @@ public class EnemyUnitNavmeshAgent : MonoBehaviour
       while (gameObject.activeSelf)
       {
          MoveToEdgeOfCircleAroundPlayer();
-         yield return new WaitForSeconds(Random.Range(maxPathFindingUpdateSpeed, minPathFindingUpdateSpeed));
+         yield return new WaitForSeconds(Random.Range(minPathFindingUpdateSpeed, maxPathFindingUpdateSpeed));
       }
    }
 

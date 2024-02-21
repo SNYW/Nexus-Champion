@@ -15,4 +15,4 @@ MonoBehaviour:
   poolName: 2
   pooledObject: {fileID: 8507701387349517131, guid: d1c9dbab9d8041041b39fc98fdf8b80d,
     type: 3}
-  minAmount: 0
+  minAmount: 10

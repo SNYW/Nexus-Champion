@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using ObjectPooling;
@@ -24,7 +21,6 @@ public class RandomForceOnAwake : PooledObject
 
     private void OnEnable()
     {
-
         _rb = GetComponentInChildren<Rigidbody>(); 
         // Stop movement
         _rb.velocity = Vector3.zero;
@@ -59,7 +55,6 @@ public class RandomForceOnAwake : PooledObject
     private void OnDisable()
     {
         StopAllCoroutines();
-        ReQueue();
     }
 
 

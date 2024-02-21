@@ -56,7 +56,7 @@ public class EnemyUnit : PooledObject
     {
         isActive = true;
         _agent.Enable();
-        hitCollider.enabled = true;
+        //hitCollider.enabled = true;
         StartCoroutine(Attack());
     }
 
@@ -65,7 +65,7 @@ public class EnemyUnit : PooledObject
         while (gameObject.activeSelf)
         {
             yield return new WaitForSeconds(Random.Range(attackCooldown.x, attackCooldown.y));
-            if (!(Vector3.Distance(transform.position, GameManager.playerUnit.transform.position) <= attackRange)) continue;
+            if ((transform.position - GameManager.playerUnit.transform.position).magnitude >= attackRange) continue;
             
             transform.forward = GameManager.playerUnit.transform.position - transform.position;
             _animator.SetTrigger(AttackTrigger);
@@ -82,6 +82,8 @@ public class EnemyUnit : PooledObject
 
     public void OnHit(Transform origin, int damageAmount)
     {
+        if (!isActive) return;
+        
         var damageEvent = new EnemyDamageEvent(this, damageAmount);
         currentHealth -= damageAmount;
         SystemEventManager.RaiseEvent(SystemEventManager.SystemEventType.EnemyDamaged, damageEvent);

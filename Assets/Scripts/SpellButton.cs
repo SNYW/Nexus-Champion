@@ -10,22 +10,26 @@ public class SpellButton : MonoBehaviour
 {
     public KeyCode hotkey;
     public Spell spell;
-    public Image cooldownIndicator;
+    public Image[] cooldownIndicators;
+    public Image overlayedCooldownIndiator;
     public bool selected;
-
-    private float currentCooldown;
+    public bool isOnCooldown;
 
     private void Start()
     {
         selected = false;
-        currentCooldown = 0;
+        isOnCooldown = false;
+        foreach (var indicator in cooldownIndicators)
+        {
+            indicator.fillAmount = 1;
+        }
     }
 
     void Update()
     {
-        if(spell != null)
-            ManageCooldown();
-        if (currentCooldown > 0) return;
+        if(spell == null) return;
+        
+        if (isOnCooldown) return;
         
         if (Input.GetKeyDown(hotkey))
         {
@@ -43,13 +47,24 @@ public class SpellButton : MonoBehaviour
         {
             selected = false;
             SystemEventManager.RaiseEvent(SystemEventManager.SystemEventType.SpellCast, spell);
-            currentCooldown = spell.coolDown;
+            isOnCooldown = true;
+            ManageCooldown();
         }
     }
 
     private void ManageCooldown()
     {
-        currentCooldown = Mathf.Clamp(currentCooldown - Time.deltaTime, 0 , float.MaxValue);
-        cooldownIndicator.fillAmount = currentCooldown / spell.coolDown;
+        overlayedCooldownIndiator.enabled = true;
+        foreach (var indicator in cooldownIndicators)
+        {
+            LeanTween.value(gameObject, 0, 1, spell.coolDown)
+                .setOnUpdate(val => indicator.fillAmount = val);
+        }
+
+        LeanTween.value(gameObject, 0, 1, spell.coolDown).setOnComplete(() =>
+        {
+            isOnCooldown = false;
+            overlayedCooldownIndiator.enabled = false;
+        });
     }
 }
