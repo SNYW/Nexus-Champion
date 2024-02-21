@@ -23,6 +23,8 @@ public class SpellButton : MonoBehaviour
         {
             indicator.fillAmount = 1;
         }
+
+        overlayedCooldownIndiator.enabled = false;
     }
 
     void Update()

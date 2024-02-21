@@ -163,5 +163,5 @@ MonoBehaviour:
   speed: 0
   lifetime: 2
   damage: 40
-  hitRadius: 4
+  hitRadius: 5
   spawnedOnDeath: []

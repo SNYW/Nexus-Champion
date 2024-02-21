@@ -56,7 +56,7 @@ public class EnemyUnit : PooledObject
     {
         isActive = true;
         _agent.Enable();
-        //hitCollider.enabled = true;
+        hitCollider.enabled = true;
         StartCoroutine(Attack());
     }
 
