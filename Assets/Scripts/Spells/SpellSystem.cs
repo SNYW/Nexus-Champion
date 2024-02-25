@@ -23,8 +23,7 @@ public class SpellSystem : MonoBehaviour
     private void OnSpellCast(object obj)
     {
         _animator.Play("Attacking");
-        dirToMouse = MouseManager.GetDirectionToMouse(transform.position, mask);
-        transform.forward = dirToMouse;
+        transform.forward = _indicator.transform.forward;
     }
 
     public void CastSpellFromAnimation(int index)
@@ -43,11 +42,12 @@ public class SpellSystem : MonoBehaviour
     private void CastProjectileSpell(ProjectileSpell ps)
     {
        
-        var projectile = ObjectPoolManager.GetPool(ps.projectileName).GetPooledObject();
+        var projectile = ObjectPoolManager.GetPool(ps.projectileName).GetPooledObject().GetComponent<Projectile>();
 
         projectile.transform.position = projectileAnchor.transform.position;
         projectile.transform.forward = _indicator.transform.forward;
         projectile.gameObject.SetActive(true);
+        projectile.InitProjectile();
     }
 
     private void OnDisable()

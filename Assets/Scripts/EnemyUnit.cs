@@ -1,19 +1,18 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using ObjectPooling;
 using SystemEvents;
 
-public class EnemyUnit : PooledObject
+public class EnemyUnit : Unit
 {
     public bool isActive;
-    public int maxHealth;
-    public int currentHealth;
     public float attackRange;
     public Transform castAnchor;
     public ObjectPool.ObjectPoolName projectilePoolName;
     public Vector2 attackCooldown;
-    public Collider hitCollider;
+    
     public ObjectPool.ObjectPoolName[] spawnOnDeath;
     
     private Animator _animator;
@@ -36,7 +35,7 @@ public class EnemyUnit : PooledObject
         }
     }
 
-    private void OnEnable()
+    protected override void OnEnable()
     {
         isActive = false;
         _healthbar = GetComponentInChildren<UnitHealthbar>();
@@ -47,9 +46,14 @@ public class EnemyUnit : PooledObject
         
         _dissolveController = GetComponentInChildren<DissolveController>();
         _dissolveController.DissolveIn(0, Enable);
-        
-        currentHealth = maxHealth;
+        base.OnEnable();
         _healthbar.Reset();
+        SystemEventManager.Subscribe(SystemEventManager.SystemEventType.GameEnd, OnGameEnd);
+    }
+
+    private void OnGameEnd(object obj)
+    { 
+        OnDeath(transform);
     }
 
     private void Enable()
@@ -74,23 +78,22 @@ public class EnemyUnit : PooledObject
 
     public void FireProjectile()
     {
-        var projectile = ObjectPoolManager.GetPool(projectilePoolName).GetPooledObject();
+        var projectile = ObjectPoolManager.GetPool(projectilePoolName).GetPooledObject().GetComponent<Projectile>();
         projectile.transform.position = castAnchor.transform.position;
         projectile.transform.forward = transform.forward;
         projectile.gameObject.SetActive(true);
+        projectile.InitProjectile();
     }
 
-    public void OnHit(Transform origin, int damageAmount)
+    public override void OnHit(Transform origin, int damageAmount)
     {
         if (!isActive) return;
         
+        base.OnHit(origin, damageAmount);
         var damageEvent = new EnemyDamageEvent(this, damageAmount);
-        currentHealth -= damageAmount;
         SystemEventManager.RaiseEvent(SystemEventManager.SystemEventType.EnemyDamaged, damageEvent);
         _healthbar.UpdateHealthIndicator(currentHealth, maxHealth);
-        
-        if(currentHealth <= 0)
-            OnDeath(origin);
+      
     }
 
     private void Update()
@@ -98,10 +101,8 @@ public class EnemyUnit : PooledObject
         _animator.SetBool(IsActive, isActive);
     }
 
-    public void OnDeath(Transform origin)
+    protected override void OnDeath(Transform origin)
     {
-        StopAllCoroutines();
-        
         foreach (var go in spawnOnDeath)
         {
             var obj = ObjectPoolManager.GetPool(go).GetPooledObject();
@@ -118,39 +119,17 @@ public class EnemyUnit : PooledObject
                 component.ApplyRandomForceAndTorque();
             }
         }
-
-        ReQueue();
+        
+        base.OnDeath(origin);
     }
     
     private void OnDisable()
     {
-        StopAllCoroutines();
+        SystemEventManager.Unsubscribe(SystemEventManager.SystemEventType.GameEnd, OnGameEnd);
     }
     
-    void OnDrawGizmos()
+    void OnDrawGizmosSelected()
     {
-    
-        var segments = 36;
-        Vector3 center = transform.position;
-
-        float angleIncrement = 360f / segments;
-        float currentAngle = 0f;
-
-        Vector3 lastPoint = center + new Vector3(attackRange, 0f, 0f);
-       
-        for (int i = 0; i < segments; i++)
-        {
-            currentAngle += angleIncrement;
-            float newX = center.x + Mathf.Cos(Mathf.Deg2Rad * currentAngle) * attackRange;
-            float newZ = center.z + Mathf.Sin(Mathf.Deg2Rad * currentAngle) * attackRange;
-            Vector3 newPoint = new Vector3(newX, center.y, newZ);
-
-            Debug.DrawLine(lastPoint, newPoint, Color.red);
-
-            lastPoint = newPoint;
-        }
-        
-        // Connect the last point to the first point to complete the circle
-        Debug.DrawLine(lastPoint, center + new Vector3(attackRange, 0f, 0f), Color.red);
+        Gizmos.DrawSphere(transform.position, attackRange);
     }
 }

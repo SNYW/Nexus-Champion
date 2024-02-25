@@ -10,6 +10,7 @@ public class CameraFollow : MonoBehaviour
 
     private void Update()
     {
-        transform.position = GameObject.Find("Player Unit").transform.position + offset;
+        if(GameManager.playerUnit != null)
+            transform.position = GameManager.playerUnit.transform.position + offset;
     }
 }

@@ -13,7 +13,7 @@ public class EnemyUnitNavmeshAgent : MonoBehaviour
    public float maxPathFindingUpdateSpeed;
    public float minPathFindingUpdateSpeed;
    private NavMeshAgent _agent;
-   private GameObject _playerUnit;
+   private PlayerUnit _playerUnit;
 
    private void OnEnable()
    {

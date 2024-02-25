@@ -10,7 +10,10 @@ namespace SystemEvents
             SpellSelected,
             SpellDeselected,
             SpellCast,
-            EnemyDamaged
+            EnemyDamaged,
+            PlayerDamaged,
+            GameEnd,
+            GameStart
         }
 
         private static Dictionary<SystemEventType, Action<object>> _eventListeners;

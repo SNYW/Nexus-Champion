@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using ObjectPooling;
+using SystemEvents;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -9,10 +12,21 @@ public class EnemySpawner : MonoBehaviour
     public float spawnRadius;
 
     public float spawnDelay;
-    // Start is called before the first frame update
-    void Start()
+
+    private void OnEnable()
+    {
+        SystemEventManager.Subscribe(SystemEventManager.SystemEventType.GameStart, Enable);
+        SystemEventManager.Subscribe(SystemEventManager.SystemEventType.GameEnd, Disable);
+    }
+
+    private void Enable(object obj)
     {
         StartCoroutine(Spawn());
+    }
+
+    private void Disable(object obj)
+    {
+        StopAllCoroutines();
     }
 
     private IEnumerator Spawn()
@@ -31,5 +45,11 @@ public class EnemySpawner : MonoBehaviour
             newSpawn.transform.rotation = spawnAnchor.rotation;
             newSpawn.gameObject.SetActive(true);
         }
+    }
+
+    private void OnDisable()
+    {
+        SystemEventManager.Unsubscribe(SystemEventManager.SystemEventType.GameStart, Enable);
+        SystemEventManager.Unsubscribe(SystemEventManager.SystemEventType.GameEnd, Disable);
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using ObjectPooling;
 using UnityEngine;
 
@@ -16,15 +17,17 @@ public class Projectile : PooledObject
   private void OnEnable()
   {
     StopAllCoroutines();
+  }
+  public void InitProjectile()
+  {
     StartCoroutine(Deactivate());
     
     if(hitOnAwake)
       DealDamage();
   }
-
   private void Update()
   {
-    transform.Translate(Vector3.forward * speed * Time.deltaTime);
+    transform.Translate(Vector3.forward * (speed * Time.deltaTime));
   }
 
   private IEnumerator Deactivate()
@@ -33,7 +36,7 @@ public class Projectile : PooledObject
     Die();
   }
 
-  private void OnTriggerEnter(Collider other)
+  private void OnCollisionEnter(Collision collision)
   {
     Die();
   }
@@ -41,12 +44,14 @@ public class Projectile : PooledObject
   protected virtual void DealDamage()
   {
     if (hitRadius == 0) return;
-    
-    var colliders = Physics.OverlapSphere(transform.position, hitRadius, hitmask);
+
+    Collider[] colliders = new Collider[10];
+    if (Physics.OverlapSphereNonAlloc(transform.position, hitRadius, colliders, hitmask) == 0) return;
     foreach (var collider in colliders)
     {
-      if (collider.TryGetComponent<EnemyUnit>(out var component) && component.isActive) 
-        component.OnHit(transform, damage);
+      if (collider == null || !collider.TryGetComponent<Unit>(out var component)) return;
+      
+      component.OnHit(transform, damage);
     }
   }
 
@@ -66,32 +71,12 @@ public class Projectile : PooledObject
       child.transform.position = transform.position;
       child.transform.rotation = transform.rotation;
       child.SetActive(true);
+      child.GetComponent<Projectile>().InitProjectile();
     }
   }
   
-  void OnDrawGizmos()
+  void OnDrawGizmosSelected()
   {
-    
-    var segments = 36;
-    Vector3 center = transform.position;
-
-    float angleIncrement = 360f / segments;
-    float currentAngle = 0f;
-
-    Vector3 lastPoint = center + new Vector3(hitRadius, 0f, 0f);
-    for (int i = 0; i < segments; i++)
-    {
-      currentAngle += angleIncrement;
-      float newX = center.x + Mathf.Cos(Mathf.Deg2Rad * currentAngle) * hitRadius;
-      float newZ = center.z + Mathf.Sin(Mathf.Deg2Rad * currentAngle) * hitRadius;
-      Vector3 newPoint = new Vector3(newX, center.y, newZ);
-
-      Debug.DrawLine(lastPoint, newPoint, Color.red);
-
-      lastPoint = newPoint;
-    }
-
-    // Connect the last point to the first point to complete the circle
-    Debug.DrawLine(lastPoint, center + new Vector3(hitRadius, 0f, 0f), Color.red);
+    Gizmos.DrawWireSphere(transform.position, hitRadius);
   }
 }

@@ -74,8 +74,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canMove: 0
-  maxFollowRange: 10
-  minFollowRange: 5
+  maxFollowRange: 20
+  minFollowRange: 15
   maxPathFindingUpdateSpeed: 1
   minPathFindingUpdateSpeed: 3
 --- !u!114 &4587951787289463565
@@ -91,14 +91,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectPoolName: 4
-  isActive: 0
   maxHealth: 100
   currentHealth: 100
+  hitCollider: {fileID: 1204079918788527456}
+  isActive: 0
   attackRange: 20
   castAnchor: {fileID: 8821091630269859733}
   projectilePoolName: 5
   attackCooldown: {x: 4, y: 8}
-  hitCollider: {fileID: 1204079918788527456}
   spawnOnDeath: 02000000
 --- !u!136 &1204079918788527456
 CapsuleCollider:
@@ -108,7 +108,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5139188764101688998}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.51392275
   m_Height: 5.1357427
@@ -128,7 +128,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &92384568
 MonoBehaviour:
