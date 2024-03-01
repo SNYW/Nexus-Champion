@@ -8,7 +8,6 @@ public class Projectile : PooledObject
 {
   public float speed;
   public float lifetime;
-  public float hitRadius;
   
   [SerializeReference]
   public SpellEffect[] onCastEffects;
@@ -57,10 +56,5 @@ public class Projectile : PooledObject
     TriggerAllEffects(onHitEffects);
     StopAllCoroutines();
     ReQueue();
-  }
-
-  void OnDrawGizmosSelected()
-  {
-    Gizmos.DrawWireSphere(transform.position, hitRadius);
   }
 }
