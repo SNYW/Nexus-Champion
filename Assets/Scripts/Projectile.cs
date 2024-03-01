@@ -1,30 +1,41 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using ObjectPooling;
+using Spells;
+using Spells.SpellEffects;
 using UnityEngine;
 
 public class Projectile : PooledObject
 {
-  public bool hitOnAwake;
-  public LayerMask hitmask;
   public float speed;
   public float lifetime;
-  public int damage;
   public float hitRadius;
-  public PooledObject[] spawnedOnDeath;
+  
+  [SerializeReference]
+  public SpellEffect[] onCastEffects;
+  
+  [SerializeReference]
+  public SpellEffect[] onHitEffects;
   
   private void OnEnable()
   {
     StopAllCoroutines();
+    TriggerAllEffects(onCastEffects);
   }
+  
+  
   public void InitProjectile()
   {
     StartCoroutine(Deactivate());
-    
-    if(hitOnAwake)
-      DealDamage();
   }
+
+  private void TriggerAllEffects(SpellEffect[] effects)
+  {
+    foreach (var effect in effects) 
+    { 
+      effect.Trigger(gameObject);
+    }
+  }
+
   private void Update()
   {
     transform.Translate(Vector3.forward * (speed * Time.deltaTime));
@@ -41,40 +52,13 @@ public class Projectile : PooledObject
     Die();
   }
 
-  protected virtual void DealDamage()
-  {
-    if (hitRadius == 0) return;
-
-    Collider[] colliders = new Collider[10];
-    if (Physics.OverlapSphereNonAlloc(transform.position, hitRadius, colliders, hitmask) == 0) return;
-    foreach (var collider in colliders)
-    {
-      if (collider == null || !collider.TryGetComponent<Unit>(out var component)) return;
-      
-      component.OnHit(transform, damage);
-    }
-  }
-
   private void Die()
   {
+    TriggerAllEffects(onHitEffects);
     StopAllCoroutines();
-    if(!hitOnAwake) DealDamage();
-    SpawnAllChildren();
     ReQueue();
   }
 
-  private void SpawnAllChildren()
-  {
-    foreach (var co in spawnedOnDeath)
-    {
-      var child = ObjectPoolManager.GetPool(co.objectPoolName).GetPooledObject();
-      child.transform.position = transform.position;
-      child.transform.rotation = transform.rotation;
-      child.SetActive(true);
-      child.GetComponent<Projectile>().InitProjectile();
-    }
-  }
-  
   void OnDrawGizmosSelected()
   {
     Gizmos.DrawWireSphere(transform.position, hitRadius);

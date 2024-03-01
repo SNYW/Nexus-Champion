@@ -267,12 +267,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectPoolName: 1
-  hitOnAwake: 1
-  hitmask:
-    serializedVersion: 2
-    m_Bits: 512
   speed: 0
   lifetime: 2
-  damage: 40
   hitRadius: 5
-  spawnedOnDeath: []
+  onCastEffects:
+  - {fileID: 11400000, guid: 7488d248119743d4caae221efe692922, type: 2}
+  onHitEffects: []

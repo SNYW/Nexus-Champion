@@ -4978,16 +4978,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectPoolName: 0
-  hitOnAwake: 0
-  hitmask:
-    serializedVersion: 2
-    m_Bits: 512
   speed: 20
   lifetime: 0.7
-  damage: 0
   hitRadius: 0
-  spawnedOnDeath:
-  - {fileID: 8110298470648433421, guid: a593fca02803b9b45977a0249e97cb22, type: 3}
+  onCastEffects: []
+  onHitEffects:
+  - {fileID: 11400000, guid: 2c722bf47e606644193466f89a89989d, type: 2}
 --- !u!135 &4273282444496632156
 SphereCollider:
   m_ObjectHideFlags: 0
