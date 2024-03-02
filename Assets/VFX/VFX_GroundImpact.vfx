@@ -17442,7 +17442,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616285}
   m_ExposedName: smokeGradient
   m_Exposed: 1
-  m_Order: 16
+  m_Order: 24
   m_Category: Smoke
   m_Min:
     m_Type:
@@ -17522,7 +17522,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616287}
   m_ExposedName: smokeTurbulence
   m_Exposed: 1
-  m_Order: 14
+  m_Order: 22
   m_Category: Smoke
   m_Min:
     m_Type:
@@ -18024,7 +18024,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616322}
   m_ExposedName: smokeVelocityMin
   m_Exposed: 1
-  m_Order: 11
+  m_Order: 19
   m_Category: Smoke
   m_Min:
     m_Type:
@@ -18206,7 +18206,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616327}
   m_ExposedName: smokeVelocityMax
   m_Exposed: 1
-  m_Order: 8
+  m_Order: 16
   m_Category: Smoke
   m_Min:
     m_Type:
@@ -18388,7 +18388,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616335}
   m_ExposedName: smokeDissolveAmount
   m_Exposed: 1
-  m_Order: 5
+  m_Order: 10
   m_Category: Smoke
   m_Min:
     m_Type:
@@ -18468,7 +18468,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616337}
   m_ExposedName: smokeSize
   m_Exposed: 1
-  m_Order: 2
+  m_Order: 4
   m_Category: Smoke
   m_Min:
     m_Type:
@@ -18700,7 +18700,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616345}
   m_ExposedName: sparkGravity
   m_Exposed: 1
-  m_Order: 6
+  m_Order: 12
   m_Category: Sparks
   m_Min:
     m_Type:
@@ -18780,7 +18780,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616347}
   m_ExposedName: SparkCount
   m_Exposed: 1
-  m_Order: 3
+  m_Order: 6
   m_Category: Sparks
   m_Min:
     m_Type:
@@ -18860,7 +18860,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616349}
   m_ExposedName: sparkVelocityMin
   m_Exposed: 1
-  m_Order: 9
+  m_Order: 17
   m_Category: Sparks
   m_Min:
     m_Type:
@@ -19042,7 +19042,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616354}
   m_ExposedName: sparkVelocityMax
   m_Exposed: 1
-  m_Order: 12
+  m_Order: 20
   m_Category: Sparks
   m_Min:
     m_Type:
@@ -19326,7 +19326,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616362}
   m_ExposedName: ringLifetime
   m_Exposed: 1
-  m_Order: 10
+  m_Order: 18
   m_Category: Rings
   m_Min:
     m_Type:
@@ -19478,7 +19478,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616366}
   m_ExposedName: ringSpeed
   m_Exposed: 1
-  m_Order: 7
+  m_Order: 14
   m_Category: Rings
   m_Min:
     m_Type:
@@ -20258,7 +20258,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616406}
   m_ExposedName: ringGradient
   m_Exposed: 1
-  m_Order: 4
+  m_Order: 8
   m_Category: Rings
   m_Min:
     m_Type:
@@ -20338,7 +20338,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616415}
   m_ExposedName: smokeLifetime
   m_Exposed: 1
-  m_Order: 15
+  m_Order: 23
   m_Category: Smoke
   m_Min:
     m_Type:
@@ -20489,7 +20489,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616422}
   m_ExposedName: smokeSizeCurve
   m_Exposed: 1
-  m_Order: 17
+  m_Order: 25
   m_Category: Smoke
   m_Min:
     m_Type:
@@ -20766,7 +20766,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616447}
   m_ExposedName: ringSize
   m_Exposed: 1
-  m_Order: 1
+  m_Order: 2
   m_Category: Rings
   m_Min:
     m_Type:
@@ -20846,7 +20846,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616449}
   m_ExposedName: ringScaleCurve
   m_Exposed: 1
-  m_Order: 13
+  m_Order: 21
   m_Category: Rings
   m_Min:
     m_Type:
@@ -20926,7 +20926,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616451}
   m_ExposedName: decal1Size
   m_Exposed: 1
-  m_Order: 0
+  m_Order: 1
   m_Category: Decals
   m_Min:
     m_Type:
@@ -21006,7 +21006,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616453}
   m_ExposedName: decal2Size
   m_Exposed: 1
-  m_Order: 1
+  m_Order: 3
   m_Category: Decals
   m_Min:
     m_Type:
@@ -21086,7 +21086,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616455}
   m_ExposedName: decal1Lifetime
   m_Exposed: 1
-  m_Order: 2
+  m_Order: 5
   m_Category: Decals
   m_Min:
     m_Type:
@@ -21238,7 +21238,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616459}
   m_ExposedName: decal2Lifetime
   m_Exposed: 1
-  m_Order: 3
+  m_Order: 7
   m_Category: Decals
   m_Min:
     m_Type:
@@ -21390,7 +21390,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616463}
   m_ExposedName: decal1Gradient
   m_Exposed: 1
-  m_Order: 4
+  m_Order: 9
   m_Category: Decals
   m_Min:
     m_Type:
@@ -21470,7 +21470,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616465}
   m_ExposedName: decal2Gradient
   m_Exposed: 1
-  m_Order: 5
+  m_Order: 11
   m_Category: Decals
   m_Min:
     m_Type:
@@ -21550,7 +21550,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616467}
   m_ExposedName: decal1ScaleCurve
   m_Exposed: 1
-  m_Order: 6
+  m_Order: 13
   m_Category: Decals
   m_Min:
     m_Type:
@@ -21630,7 +21630,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616469}
   m_ExposedName: decal2ScaleCurve
   m_Exposed: 1
-  m_Order: 7
+  m_Order: 15
   m_Category: Decals
   m_Min:
     m_Type:

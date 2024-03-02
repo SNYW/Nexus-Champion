@@ -49,11 +49,23 @@ VisualEffect:
   m_ResourceVersion: 1
   m_PropertySheet:
     m_Float:
-      m_Array: []
+      m_Array:
+      - m_Value: 3
+        m_Name: ringSize
+        m_Overridden: 1
     m_Vector2f:
-      m_Array: []
+      m_Array:
+      - m_Value: {x: 0.8, y: 1.1}
+        m_Name: ringLifetime
+        m_Overridden: 1
     m_Vector3f:
-      m_Array: []
+      m_Array:
+      - m_Value: {x: -4, y: 20, z: -4}
+        m_Name: sparkVelocityMin
+        m_Overridden: 1
+      - m_Value: {x: 4, y: 30, z: 4}
+        m_Name: sparkVelocityMax
+        m_Overridden: 1
     m_Vector4f:
       m_Array: []
     m_Uint:
@@ -65,7 +77,38 @@ VisualEffect:
     m_AnimationCurve:
       m_Array: []
     m_Gradient:
-      m_Array: []
+      m_Array:
+      - m_Value:
+          serializedVersion: 2
+          key0: {r: 13.920445, g: 0, b: 0, a: 0}
+          key1: {r: 22.24647, g: 0.73570985, b: 0.31480795, a: 1}
+          key2: {r: 78.79325, g: 23.63482, b: 0, a: 1}
+          key3: {r: 22.363522, g: 4.2372236, b: 0, a: 0}
+          key4: {r: 1.8443027, g: 0.2220888, b: 0, a: 0}
+          key5: {r: 0.9333391, g: 0.12184453, b: 0, a: 0}
+          key6: {r: 0, g: 0, b: 0, a: 0}
+          key7: {r: 0, g: 0, b: 0, a: 0}
+          ctime0: 0
+          ctime1: 3470
+          ctime2: 7517
+          ctime3: 11372
+          ctime4: 18311
+          ctime5: 24672
+          ctime6: 57247
+          ctime7: 0
+          atime0: 0
+          atime1: 2699
+          atime2: 24479
+          atime3: 65535
+          atime4: 0
+          atime5: 0
+          atime6: 0
+          atime7: 0
+          m_Mode: 0
+          m_NumColorKeys: 7
+          m_NumAlphaKeys: 4
+        m_Name: ringGradient
+        m_Overridden: 1
     m_NamedObject:
       m_Array: []
     m_Bool:
