@@ -278,7 +278,7 @@ MonoBehaviour:
     x: -1347
     y: -238
     width: 6398
-    height: 3026
+    height: 3046
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -369,118 +369,6 @@ MonoBehaviour:
   m_UISuperCollapsed: 0
   m_UIInfos: {fileID: 114340500867371532}
   m_ParameterInfo:
-  - name: decal1Size
-    path: decal1Size
-    tooltip: 
-    sheetType: m_Float
-    realType: Single
-    defaultValue:
-      m_Type:
-        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 14
-    min: -Infinity
-    max: Infinity
-    enumValues: []
-    descendantCount: 0
-  - name: decal2Size
-    path: decal2Size
-    tooltip: 
-    sheetType: m_Float
-    realType: Single
-    defaultValue:
-      m_Type:
-        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 9
-    min: -Infinity
-    max: Infinity
-    enumValues: []
-    descendantCount: 0
-  - name: decal1Lifetime
-    path: decal1Lifetime
-    tooltip: 
-    sheetType: m_Vector2f
-    realType: Vector2
-    defaultValue:
-      m_Type:
-        m_SerializableType: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":0.5,"y":0.699999988079071}'
-    min: -Infinity
-    max: Infinity
-    enumValues: []
-    descendantCount: 0
-  - name: decal2Lifetime
-    path: decal2Lifetime
-    tooltip: 
-    sheetType: m_Vector2f
-    realType: Vector2
-    defaultValue:
-      m_Type:
-        m_SerializableType: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":0.800000011920929,"y":0.8999999761581421}'
-    min: -Infinity
-    max: Infinity
-    enumValues: []
-    descendantCount: 0
-  - name: decal1Gradient
-    path: decal1Gradient
-    tooltip: 
-    sheetType: m_Gradient
-    realType: Gradient
-    defaultValue:
-      m_Type:
-        m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":0.19811320304870606,"g":0.19811320304870606,"b":0.19811320304870606,"a":1.0},"time":0.0},{"color":{"r":13.103947639465332,"g":7.168621063232422,"b":0.30905529856681826,"a":1.0},"time":0.10588235408067703},{"color":{"r":7.619157791137695,"g":1.7167760133743287,"b":0.0,"a":1.0},"time":0.21176470816135407},{"color":{"r":1.701960802078247,"g":0.19607843458652497,"b":0.0,"a":1.0},"time":0.5147020816802979},{"color":{"r":0.7641509771347046,"g":0.11252620816230774,"b":0.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":1.0,"time":0.10000763088464737},{"alpha":0.8640784621238709,"time":0.5117723345756531},{"alpha":0.800000011920929,"time":0.7058823704719544},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
-    min: -Infinity
-    max: Infinity
-    enumValues: []
-    descendantCount: 0
-  - name: decal2Gradient
-    path: decal2Gradient
-    tooltip: 
-    sheetType: m_Gradient
-    realType: Gradient
-    defaultValue:
-      m_Type:
-        m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":0.19811320304870606,"g":0.19811320304870606,"b":0.19811320304870606,"a":1.0},"time":0.0},{"color":{"r":0.6794517636299133,"g":0.6794517636299133,"b":0.6794517636299133,"a":1.0},"time":0.10588235408067703},{"color":{"r":0.5,"g":0.5,"b":0.5,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":1.0,"time":0.10000763088464737},{"alpha":0.8640784621238709,"time":0.5117723345756531},{"alpha":0.800000011920929,"time":0.7058823704719544},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
-    min: -Infinity
-    max: Infinity
-    enumValues: []
-    descendantCount: 0
-  - name: decal1ScaleCurve
-    path: decal1ScaleCurve
-    tooltip: 
-    sheetType: m_AnimationCurve
-    realType: AnimationCurve
-    defaultValue:
-      m_Type:
-        m_SerializableType: UnityEngine.AnimationCurve, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"frames":[{"time":0.0,"value":0.0,"inTangent":0.0,"outTangent":0.0,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":0.09128745645284653,"value":0.8280669450759888,"inTangent":-0.5558648705482483,"outTangent":-0.5558648705482483,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":1.0,"value":0.0,"inTangent":0.0,"outTangent":0.0,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
-    min: -Infinity
-    max: Infinity
-    enumValues: []
-    descendantCount: 0
-  - name: decal2ScaleCurve
-    path: decal2ScaleCurve
-    tooltip: 
-    sheetType: m_AnimationCurve
-    realType: AnimationCurve
-    defaultValue:
-      m_Type:
-        m_SerializableType: UnityEngine.AnimationCurve, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"frames":[{"time":0.0,"value":1.0,"inTangent":-0.13111771643161775,"outTangent":-0.13111771643161775,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.33944371342658999,"value":0.9554929137229919,"inTangent":-0.20627497136592866,"outTangent":-0.20627497136592866,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":0.7526430487632752,"value":0.7103503942489624,"inTangent":-1.7325210571289063,"outTangent":-1.7325210571289063,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.9999999403953552,"value":0.0,"inTangent":-2.871762990951538,"outTangent":-2.871762990951538,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
-    min: -Infinity
-    max: Infinity
-    enumValues: []
-    descendantCount: 0
   - name: Smoke
     path: 
     tooltip: 
@@ -768,6 +656,131 @@ MonoBehaviour:
         m_SerializableType: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
       m_SerializableObject: '{"x":1.0,"y":20.0,"z":1.0}'
+    min: -Infinity
+    max: Infinity
+    enumValues: []
+    descendantCount: 0
+  - name: Decals
+    path: 
+    tooltip: 
+    sheetType: 
+    realType: 
+    defaultValue:
+      m_Type:
+        m_SerializableType: 
+      m_SerializableObject: 
+    min: -Infinity
+    max: Infinity
+    enumValues: []
+    descendantCount: 0
+  - name: decal1Size
+    path: decal1Size
+    tooltip: 
+    sheetType: m_Float
+    realType: Single
+    defaultValue:
+      m_Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 14
+    min: -Infinity
+    max: Infinity
+    enumValues: []
+    descendantCount: 0
+  - name: decal2Size
+    path: decal2Size
+    tooltip: 
+    sheetType: m_Float
+    realType: Single
+    defaultValue:
+      m_Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 9
+    min: -Infinity
+    max: Infinity
+    enumValues: []
+    descendantCount: 0
+  - name: decal1Lifetime
+    path: decal1Lifetime
+    tooltip: 
+    sheetType: m_Vector2f
+    realType: Vector2
+    defaultValue:
+      m_Type:
+        m_SerializableType: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      m_SerializableObject: '{"x":0.5,"y":0.699999988079071}'
+    min: -Infinity
+    max: Infinity
+    enumValues: []
+    descendantCount: 0
+  - name: decal2Lifetime
+    path: decal2Lifetime
+    tooltip: 
+    sheetType: m_Vector2f
+    realType: Vector2
+    defaultValue:
+      m_Type:
+        m_SerializableType: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      m_SerializableObject: '{"x":0.800000011920929,"y":0.8999999761581421}'
+    min: -Infinity
+    max: Infinity
+    enumValues: []
+    descendantCount: 0
+  - name: decal1Gradient
+    path: decal1Gradient
+    tooltip: 
+    sheetType: m_Gradient
+    realType: Gradient
+    defaultValue:
+      m_Type:
+        m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":0.19811320304870606,"g":0.19811320304870606,"b":0.19811320304870606,"a":1.0},"time":0.0},{"color":{"r":13.103947639465332,"g":7.168621063232422,"b":0.30905529856681826,"a":1.0},"time":0.10588235408067703},{"color":{"r":7.619157791137695,"g":1.7167760133743287,"b":0.0,"a":1.0},"time":0.21176470816135407},{"color":{"r":1.701960802078247,"g":0.19607843458652497,"b":0.0,"a":1.0},"time":0.5147020816802979},{"color":{"r":0.7641509771347046,"g":0.11252620816230774,"b":0.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":1.0,"time":0.10000763088464737},{"alpha":0.8640784621238709,"time":0.5117723345756531},{"alpha":0.800000011920929,"time":0.7058823704719544},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
+    min: -Infinity
+    max: Infinity
+    enumValues: []
+    descendantCount: 0
+  - name: decal2Gradient
+    path: decal2Gradient
+    tooltip: 
+    sheetType: m_Gradient
+    realType: Gradient
+    defaultValue:
+      m_Type:
+        m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":0.0,"g":0.0,"b":0.0,"a":1.0},"time":0.0},{"color":{"r":0.0,"g":0.0,"b":0.0,"a":1.0},"time":0.10588235408067703},{"color":{"r":0.06603771448135376,"g":0.06603771448135376,"b":0.06603771448135376,"a":1.0},"time":0.3470664620399475},{"color":{"r":0.5,"g":0.5,"b":0.5,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":1.0,"time":0.10000763088464737},{"alpha":0.8640784621238709,"time":0.5117723345756531},{"alpha":0.800000011920929,"time":0.7058823704719544},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
+    min: -Infinity
+    max: Infinity
+    enumValues: []
+    descendantCount: 0
+  - name: decal1ScaleCurve
+    path: decal1ScaleCurve
+    tooltip: 
+    sheetType: m_AnimationCurve
+    realType: AnimationCurve
+    defaultValue:
+      m_Type:
+        m_SerializableType: UnityEngine.AnimationCurve, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      m_SerializableObject: '{"frames":[{"time":0.0,"value":0.0,"inTangent":0.0,"outTangent":0.0,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":0.09128745645284653,"value":0.8280669450759888,"inTangent":-0.5558648705482483,"outTangent":-0.5558648705482483,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":1.0,"value":0.0,"inTangent":0.0,"outTangent":0.0,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
+    min: -Infinity
+    max: Infinity
+    enumValues: []
+    descendantCount: 0
+  - name: decal2ScaleCurve
+    path: decal2ScaleCurve
+    tooltip: 
+    sheetType: m_AnimationCurve
+    realType: AnimationCurve
+    defaultValue:
+      m_Type:
+        m_SerializableType: UnityEngine.AnimationCurve, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      m_SerializableObject: '{"frames":[{"time":0.0,"value":1.0,"inTangent":-0.13111771643161775,"outTangent":-0.13111771643161775,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.33944371342658999,"value":0.9554929137229919,"inTangent":-0.20627497136592866,"outTangent":-0.20627497136592866,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":0.7526430487632752,"value":0.7103503942489624,"inTangent":-1.7325210571289063,"outTangent":-1.7325210571289063,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.9999999403953552,"value":0.0,"inTangent":-2.871762990951538,"outTangent":-2.871762990951538,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -5135,7 +5148,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615449}
   - {fileID: 8926484042661615814}
   m_OutputSlots: []
-  m_Label: 
+  m_Label: RINGS
   m_Data: {fileID: 8926484042661615375}
   m_InputFlowSlot:
   - link:
@@ -5155,7 +5168,7 @@ MonoBehaviour:
   colorMapping: 0
   uvMode: 0
   useSoftParticle: 0
-  vfxSystemSortPriority: 0
+  vfxSystemSortPriority: 4
   sort: 0
   indirectDraw: 0
   computeCulling: 0
@@ -6152,7 +6165,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615799}
   - {fileID: 8926484042661615815}
   m_OutputSlots: []
-  m_Label: 
+  m_Label: SMOKE
   m_Data: {fileID: 8926484042661615573}
   m_InputFlowSlot:
   - link:
@@ -6172,7 +6185,7 @@ MonoBehaviour:
   colorMapping: 0
   uvMode: 0
   useSoftParticle: 0
-  vfxSystemSortPriority: 1
+  vfxSystemSortPriority: 3
   sort: 0
   indirectDraw: 0
   computeCulling: 0
@@ -8905,7 +8918,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615744}
   m_OutputSlots: []
   m_Label: 
-  m_Data: {fileID: 8926484042661616283}
+  m_Data: {fileID: 8926484042661616470}
   m_InputFlowSlot:
   - link: []
   m_OutputFlowSlot:
@@ -8922,7 +8935,7 @@ MonoBehaviour:
   colorMapping: 0
   uvMode: 0
   useSoftParticle: 0
-  vfxSystemSortPriority: 4
+  vfxSystemSortPriority: 5
   sort: 0
   indirectDraw: 0
   computeCulling: 0
@@ -12262,7 +12275,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616006}
   - {fileID: 8926484042661616007}
   m_OutputSlots: []
-  m_Label: 
+  m_Label: DECAL1
   m_Data: {fileID: 8926484042661615990}
   m_InputFlowSlot:
   - link:
@@ -12282,7 +12295,7 @@ MonoBehaviour:
   colorMapping: 0
   uvMode: 0
   useSoftParticle: 1
-  vfxSystemSortPriority: 3
+  vfxSystemSortPriority: 1
   sort: 0
   indirectDraw: 0
   computeCulling: 0
@@ -13092,7 +13105,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616042}
   - {fileID: 8926484042661616043}
   m_OutputSlots: []
-  m_Label: 
+  m_Label: DECAL2
   m_Data: {fileID: 8926484042661616142}
   m_InputFlowSlot:
   - link:
@@ -13112,7 +13125,7 @@ MonoBehaviour:
   colorMapping: 0
   uvMode: 0
   useSoftParticle: 1
-  vfxSystemSortPriority: 2
+  vfxSystemSortPriority: 0
   sort: 0
   indirectDraw: 0
   computeCulling: 0
@@ -16118,7 +16131,7 @@ MonoBehaviour:
   m_InputSlots:
   - {fileID: 8926484042661616212}
   m_OutputSlots: []
-  m_Label: 
+  m_Label: SPARKS
   m_Data: {fileID: 8926484042661614568}
   m_InputFlowSlot:
   - link:
@@ -16138,7 +16151,7 @@ MonoBehaviour:
   colorMapping: 0
   uvMode: 0
   useSoftParticle: 0
-  vfxSystemSortPriority: 0
+  vfxSystemSortPriority: 2
   sort: 0
   indirectDraw: 0
   computeCulling: 0
@@ -17406,34 +17419,6 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
   m_Direction: 0
   m_LinkedSlots: []
---- !u!114 &8926484042661616283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d78581a96eae8bf4398c282eb0b098bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UIIgnoredErrors: []
-  m_Parent: {fileID: 114350483966674976}
-  m_Children: []
-  m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
-  m_UISuperCollapsed: 0
-  title: 
-  m_Owners:
-  - {fileID: 8926484042661615741}
-  dataType: 0
-  capacity: 128
-  stripCapacity: 1
-  particlePerStripCount: 128
-  needsComputeBounds: 0
-  boundsMode: 0
-  m_Space: 0
 --- !u!114 &8926484042661616284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17457,7 +17442,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616285}
   m_ExposedName: smokeGradient
   m_Exposed: 1
-  m_Order: 7
+  m_Order: 16
   m_Category: Smoke
   m_Min:
     m_Type:
@@ -17537,7 +17522,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616287}
   m_ExposedName: smokeTurbulence
   m_Exposed: 1
-  m_Order: 5
+  m_Order: 14
   m_Category: Smoke
   m_Min:
     m_Type:
@@ -18039,7 +18024,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616322}
   m_ExposedName: smokeVelocityMin
   m_Exposed: 1
-  m_Order: 4
+  m_Order: 11
   m_Category: Smoke
   m_Min:
     m_Type:
@@ -18221,7 +18206,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616327}
   m_ExposedName: smokeVelocityMax
   m_Exposed: 1
-  m_Order: 3
+  m_Order: 8
   m_Category: Smoke
   m_Min:
     m_Type:
@@ -18403,7 +18388,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616335}
   m_ExposedName: smokeDissolveAmount
   m_Exposed: 1
-  m_Order: 2
+  m_Order: 5
   m_Category: Smoke
   m_Min:
     m_Type:
@@ -18483,7 +18468,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616337}
   m_ExposedName: smokeSize
   m_Exposed: 1
-  m_Order: 1
+  m_Order: 2
   m_Category: Smoke
   m_Min:
     m_Type:
@@ -18715,7 +18700,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616345}
   m_ExposedName: sparkGravity
   m_Exposed: 1
-  m_Order: 2
+  m_Order: 6
   m_Category: Sparks
   m_Min:
     m_Type:
@@ -18795,7 +18780,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616347}
   m_ExposedName: SparkCount
   m_Exposed: 1
-  m_Order: 1
+  m_Order: 3
   m_Category: Sparks
   m_Min:
     m_Type:
@@ -18875,7 +18860,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616349}
   m_ExposedName: sparkVelocityMin
   m_Exposed: 1
-  m_Order: 3
+  m_Order: 9
   m_Category: Sparks
   m_Min:
     m_Type:
@@ -19057,7 +19042,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616354}
   m_ExposedName: sparkVelocityMax
   m_Exposed: 1
-  m_Order: 4
+  m_Order: 12
   m_Category: Sparks
   m_Min:
     m_Type:
@@ -19341,7 +19326,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616362}
   m_ExposedName: ringLifetime
   m_Exposed: 1
-  m_Order: 3
+  m_Order: 10
   m_Category: Rings
   m_Min:
     m_Type:
@@ -19493,7 +19478,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616366}
   m_ExposedName: ringSpeed
   m_Exposed: 1
-  m_Order: 2
+  m_Order: 7
   m_Category: Rings
   m_Min:
     m_Type:
@@ -20273,7 +20258,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616406}
   m_ExposedName: ringGradient
   m_Exposed: 1
-  m_Order: 1
+  m_Order: 4
   m_Category: Rings
   m_Min:
     m_Type:
@@ -20353,7 +20338,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616415}
   m_ExposedName: smokeLifetime
   m_Exposed: 1
-  m_Order: 6
+  m_Order: 15
   m_Category: Smoke
   m_Min:
     m_Type:
@@ -20504,7 +20489,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616422}
   m_ExposedName: smokeSizeCurve
   m_Exposed: 1
-  m_Order: 8
+  m_Order: 17
   m_Category: Smoke
   m_Min:
     m_Type:
@@ -20781,7 +20766,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616447}
   m_ExposedName: ringSize
   m_Exposed: 1
-  m_Order: 0
+  m_Order: 1
   m_Category: Rings
   m_Min:
     m_Type:
@@ -20861,7 +20846,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616449}
   m_ExposedName: ringScaleCurve
   m_Exposed: 1
-  m_Order: 4
+  m_Order: 13
   m_Category: Rings
   m_Min:
     m_Type:
@@ -20941,8 +20926,8 @@ MonoBehaviour:
   - {fileID: 8926484042661616451}
   m_ExposedName: decal1Size
   m_Exposed: 1
-  m_Order: 9
-  m_Category: 
+  m_Order: 0
+  m_Category: Decals
   m_Min:
     m_Type:
       m_SerializableType: 
@@ -21021,8 +21006,8 @@ MonoBehaviour:
   - {fileID: 8926484042661616453}
   m_ExposedName: decal2Size
   m_Exposed: 1
-  m_Order: 10
-  m_Category: 
+  m_Order: 1
+  m_Category: Decals
   m_Min:
     m_Type:
       m_SerializableType: 
@@ -21101,8 +21086,8 @@ MonoBehaviour:
   - {fileID: 8926484042661616455}
   m_ExposedName: decal1Lifetime
   m_Exposed: 1
-  m_Order: 11
-  m_Category: 
+  m_Order: 2
+  m_Category: Decals
   m_Min:
     m_Type:
       m_SerializableType: 
@@ -21253,8 +21238,8 @@ MonoBehaviour:
   - {fileID: 8926484042661616459}
   m_ExposedName: decal2Lifetime
   m_Exposed: 1
-  m_Order: 12
-  m_Category: 
+  m_Order: 3
+  m_Category: Decals
   m_Min:
     m_Type:
       m_SerializableType: 
@@ -21405,8 +21390,8 @@ MonoBehaviour:
   - {fileID: 8926484042661616463}
   m_ExposedName: decal1Gradient
   m_Exposed: 1
-  m_Order: 13
-  m_Category: 
+  m_Order: 4
+  m_Category: Decals
   m_Min:
     m_Type:
       m_SerializableType: 
@@ -21478,15 +21463,15 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
+  m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots:
   - {fileID: 8926484042661616465}
   m_ExposedName: decal2Gradient
   m_Exposed: 1
-  m_Order: 14
-  m_Category: 
+  m_Order: 5
+  m_Category: Decals
   m_Min:
     m_Type:
       m_SerializableType: 
@@ -21532,7 +21517,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":0.19811320304870606,"g":0.19811320304870606,"b":0.19811320304870606,"a":1.0},"time":0.0},{"color":{"r":0.6794517636299133,"g":0.6794517636299133,"b":0.6794517636299133,"a":1.0},"time":0.10588235408067703},{"color":{"r":0.5,"g":0.5,"b":0.5,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":1.0,"time":0.10000763088464737},{"alpha":0.8640784621238709,"time":0.5117723345756531},{"alpha":0.800000011920929,"time":0.7058823704719544},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":0.0,"g":0.0,"b":0.0,"a":1.0},"time":0.0},{"color":{"r":0.0,"g":0.0,"b":0.0,"a":1.0},"time":0.10588235408067703},{"color":{"r":0.06603771448135376,"g":0.06603771448135376,"b":0.06603771448135376,"a":1.0},"time":0.3470664620399475},{"color":{"r":0.5,"g":0.5,"b":0.5,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":1.0,"time":0.10000763088464737},{"alpha":0.8640784621238709,"time":0.5117723345756531},{"alpha":0.800000011920929,"time":0.7058823704719544},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
     m_Space: 2147483647
   m_Property:
     name: o
@@ -21565,8 +21550,8 @@ MonoBehaviour:
   - {fileID: 8926484042661616467}
   m_ExposedName: decal1ScaleCurve
   m_Exposed: 1
-  m_Order: 15
-  m_Category: 
+  m_Order: 6
+  m_Category: Decals
   m_Min:
     m_Type:
       m_SerializableType: 
@@ -21638,15 +21623,15 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
+  m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots:
   - {fileID: 8926484042661616469}
   m_ExposedName: decal2ScaleCurve
   m_Exposed: 1
-  m_Order: 16
-  m_Category: 
+  m_Order: 7
+  m_Category: Decals
   m_Min:
     m_Type:
       m_SerializableType: 
@@ -21702,3 +21687,31 @@ MonoBehaviour:
   m_Direction: 1
   m_LinkedSlots:
   - {fileID: 8926484042661616118}
+--- !u!114 &8926484042661616470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d78581a96eae8bf4398c282eb0b098bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 114350483966674976}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  title: 
+  m_Owners:
+  - {fileID: 8926484042661615741}
+  dataType: 0
+  capacity: 128
+  stripCapacity: 1
+  particlePerStripCount: 128
+  needsComputeBounds: 0
+  boundsMode: 0
+  m_Space: 0
