@@ -268,9 +268,9 @@ MonoBehaviour:
   - name: Smoke
     collapsed: 1
   - name: Rings
-    collapsed: 0
+    collapsed: 1
   - name: Sparks
-    collapsed: 0
+    collapsed: 1
   - name: Decals
     collapsed: 1
   uiBounds:
