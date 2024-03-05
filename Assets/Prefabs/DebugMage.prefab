@@ -171,9 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mask:
     serializedVersion: 2
-    m_Bits: 512
-  spells:
-  - {fileID: 11400000, guid: 8a6d694859bc654488b3486d7e654610, type: 2}
+    m_Bits: 1
   projectileAnchor: {fileID: 4384085648601774920}
 --- !u!136 &3842188507306280164
 CapsuleCollider:

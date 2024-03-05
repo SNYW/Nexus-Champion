@@ -34,21 +34,10 @@ public class NavMeshMovementSystem : MonoBehaviour
         // Check if the left mouse button is pressed
         if (Input.GetMouseButtonDown(1) && canMove)
         {
-            // Cast a ray from the mouse position
-            Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            // Check if the ray hits something
-            if (Physics.Raycast(ray, out hit, int.MaxValue, rayLayer))
+            if (MouseManager.GetMousePositionOnNavmesh(rayLayer, transform.position, out var pos))
             {
-                // Check if the hit point is on the NavMesh
-                NavMeshHit navMeshHit;
-                if (NavMesh.SamplePosition(hit.point, out navMeshHit, 1.0f, NavMesh.AllAreas))
-                {
-                    _agent.isStopped = false;
-                    // Set the agent's destination to the hit point on the NavMesh
-                    _agent.SetDestination(navMeshHit.position);
-                }
+                _agent.isStopped = false;
+                _agent.SetDestination(pos);
             }
         }
         

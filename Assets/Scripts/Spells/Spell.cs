@@ -9,7 +9,5 @@ namespace Spells
         public float coolDown;
         public GameObject indicatorPrefab;
         public ObjectPool projectile;
-
-        public abstract void TryCast();
     }
 }

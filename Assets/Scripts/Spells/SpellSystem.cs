@@ -1,6 +1,5 @@
 using Spells;
 using SystemEvents;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class SpellSystem : MonoBehaviour
@@ -12,6 +11,7 @@ public class SpellSystem : MonoBehaviour
     private Vector3 dirToMouse;
     private CastIndicator _indicator;
     private Spell _chosenSpell;
+    private Vector3 _cachedMousePos;
 
     private void OnEnable()
     {
@@ -25,6 +25,8 @@ public class SpellSystem : MonoBehaviour
         if (obj is not Spell s) return;
         
         _chosenSpell = s;
+        MouseManager.GetMousePositionOnNavmesh(mask, transform.position, out var pos);
+        _cachedMousePos = pos;
 
         _animator.Play("Attacking");
         transform.forward = _indicator.transform.forward;
@@ -40,11 +42,18 @@ public class SpellSystem : MonoBehaviour
     {
         if (spell is not Spell) return;
 
-        if (spell is ProjectileSpell ps)
-            CastProjectileSpell(ps);
+        switch (spell)
+        {
+            case ProjectileSpell ps:
+                CastSpell(ps);
+                break;
+            case AOESpell es:
+                CastSpell(es);
+                break;
+        }
     }
 
-    private void CastProjectileSpell(ProjectileSpell ps)
+    private void CastSpell(ProjectileSpell ps)
     {
        
         var projectile = ps.projectile.GetPooledObject().GetComponent<Projectile>();
@@ -53,6 +62,16 @@ public class SpellSystem : MonoBehaviour
         projectile.transform.forward = _indicator.transform.forward;
         projectile.gameObject.SetActive(true);
         projectile.InitProjectile();
+    }
+    
+    private void CastSpell(AOESpell ps)
+    {
+       
+        var projectile = ps.projectile.GetPooledObject().GetComponent<Projectile>();
+
+            projectile.transform.position = _cachedMousePos;
+            projectile.gameObject.SetActive(true);
+            projectile.InitProjectile();
     }
 
 

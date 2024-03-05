@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9ddddecc3393154e9f3ac317e7a64c2, type: 3}
+  m_Name: Meteor
+  m_EditorClassIdentifier: 
+  pooledObject: {fileID: 285929789472415693, guid: 972ba2603ad7f104fab441ddb5268808,
+    type: 3}
+  minAmount: 10

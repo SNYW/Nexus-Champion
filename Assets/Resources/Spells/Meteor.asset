@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a28eea5fe6a62742870d659c801a62a, type: 3}
+  m_Name: Meteor
+  m_EditorClassIdentifier: 
+  spellIcon: {fileID: 0}
+  coolDown: 0
+  indicatorPrefab: {fileID: 6467987258048275802, guid: ece6477448ee9cc4889db4ccbadffefc,
+    type: 3}
+  projectile: {fileID: 11400000, guid: dbeb50f1546ae734b8bd16499e6fea67, type: 2}
