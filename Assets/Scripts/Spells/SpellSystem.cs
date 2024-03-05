@@ -6,12 +6,12 @@ using UnityEngine;
 public class SpellSystem : MonoBehaviour
 {
     public LayerMask mask;
-    public Spell[] spells;
     public GameObject projectileAnchor;
 
     private Animator _animator;
     private Vector3 dirToMouse;
     private CastIndicator _indicator;
+    private Spell _chosenSpell;
 
     private void OnEnable()
     {
@@ -22,13 +22,18 @@ public class SpellSystem : MonoBehaviour
 
     private void OnSpellCast(object obj)
     {
+        if (obj is not Spell s) return;
+        
+        _chosenSpell = s;
+
         _animator.Play("Attacking");
         transform.forward = _indicator.transform.forward;
     }
 
-    public void CastSpellFromAnimation(int index)
+    public void CastSpellFromAnimation()
     {
-        TryCastSpell(spells[index]);
+        TryCastSpell(_chosenSpell);
+        _chosenSpell = null;
     }
 
     private void TryCastSpell(object spell)
@@ -49,6 +54,7 @@ public class SpellSystem : MonoBehaviour
         projectile.gameObject.SetActive(true);
         projectile.InitProjectile();
     }
+
 
     private void OnDisable()
     {

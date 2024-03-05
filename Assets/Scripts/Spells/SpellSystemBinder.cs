@@ -7,8 +7,8 @@ public class SpellSystemBinder : MonoBehaviour
 {
     public SpellSystem boundSystem;
     
-    public void CastSpellFromAnimation(int index)
+    public void CastSpellFromAnimation()
     {
-        boundSystem.CastSpellFromAnimation(index);
+        boundSystem.CastSpellFromAnimation();
     }
 }
