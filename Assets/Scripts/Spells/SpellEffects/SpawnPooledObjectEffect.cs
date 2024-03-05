@@ -7,7 +7,7 @@ namespace Spells.SpellEffects
     public class SpawnPooledObjectEffect : SpellEffect
     {
         public int amount = 1;
-        public ObjectPool.ObjectPoolName poolName;
+        public ObjectPool pool;
         
         public override void Trigger(GameObject obj)
         {
@@ -19,7 +19,7 @@ namespace Spells.SpellEffects
 
         private void SpawnTargetObject(GameObject gameObject)
         {
-            var pooledObj = ObjectPoolManager.GetPool(poolName).GetPooledObject();
+            var pooledObj = pool.GetPooledObject();
             pooledObj.transform.position = gameObject.transform.position;
             pooledObj.SetActive(true);
         }

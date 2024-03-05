@@ -1,6 +1,7 @@
 using System;
 using ObjectPooling;
 using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class FloatingText : PooledObject
@@ -27,5 +28,7 @@ public class FloatingText : PooledObject
       canvas.transform.position = _startCanvasPos;
       canvasGroup.alpha = 1;
       transform.localScale = Vector3.one;
+      transform.localPosition = Vector3.zero;
+      transform.rotation = Quaternion.identity;
    }
 }

@@ -8,7 +8,7 @@ namespace Spells
         public Sprite spellIcon;
         public float coolDown;
         public GameObject indicatorPrefab;
-        public ObjectPool.ObjectPoolName projectileName;
+        public ObjectPool projectile;
 
         public abstract void TryCast();
     }

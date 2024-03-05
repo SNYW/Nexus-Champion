@@ -34,7 +34,6 @@ RectTransform:
   m_Children:
   - {fileID: 3068253821320156997}
   m_Father: {fileID: 3068253822065157960}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -58,7 +57,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -145,7 +146,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3068253821127194681}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -274,6 +274,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3068253822065157958}
+  serializedVersion: 2
   m_LocalRotation: {x: 0.3790523, y: 0, z: 0, w: 0.9253752}
   m_LocalPosition: {x: 0, y: 2.23, z: 3.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -281,7 +282,6 @@ Transform:
   m_Children:
   - {fileID: 3068253821127194681}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 44.55, y: 0, z: 0}
 --- !u!114 &3068253822065157959
 MonoBehaviour:
@@ -295,6 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66bad439eb11f9249bc1d92128cc9e71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invert: 0
 --- !u!114 &304286615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,7 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82eef70e470b0c6429cce06886b050cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPoolName: 3
+  pool: {fileID: 11400000, guid: d6c7ecddc7af4f7419968faaad9dde6f, type: 2}
   moveAmount: 2
   text: {fileID: 3068253821320156998}
   canvas: {fileID: 3068253821127194684}

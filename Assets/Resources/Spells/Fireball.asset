@@ -16,4 +16,4 @@ MonoBehaviour:
   coolDown: 1
   indicatorPrefab: {fileID: 6838668822812109788, guid: 4508740a41a0bde45880a5d8a62777b4,
     type: 3}
-  projectileName: 0
+  projectile: {fileID: 11400000, guid: 8103fe371cefd4444a99bfd43b19beb8, type: 2}

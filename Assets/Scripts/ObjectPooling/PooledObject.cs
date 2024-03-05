@@ -4,11 +4,11 @@ namespace ObjectPooling
 {
     public abstract class PooledObject : MonoBehaviour
     {
-        public ObjectPool.ObjectPoolName objectPoolName;
+        public ObjectPool pool;
 
         protected void ReQueue()
         {
-            ObjectPoolManager.GetPool(objectPoolName).ReQueue(gameObject);
+            pool.ReQueue(gameObject);
             transform.position = Vector3.zero;
             gameObject.SetActive(false);
         }

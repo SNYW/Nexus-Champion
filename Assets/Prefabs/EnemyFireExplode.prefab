@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6781713321800036347}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8463951490904305032}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!2083052967 &46233315800532264
 VisualEffect:
@@ -46,6 +46,7 @@ VisualEffect:
   m_InitialEventNameOverriden: 0
   m_StartSeed: 0
   m_ResetSeedOnPlay: 1
+  m_AllowInstancing: 1
   m_ResourceVersion: 1
   m_PropertySheet:
     m_Float:
@@ -134,6 +135,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7957974783394019786}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 18.704157, y: 15.301219, z: -4.995869}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -142,7 +144,6 @@ Transform:
   - {fileID: 5975385054962736605}
   - {fileID: 9013107766678380080}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8110298470648433421
 MonoBehaviour:
@@ -156,21 +157,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00a32bcc8bb4257468188dece2e38f4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPoolName: 6
-  hitOnAwake: 1
-  hitmask:
-    serializedVersion: 2
-    m_Bits: 1024
+  pool: {fileID: 11400000, guid: 562b6aafef6c2db4daa0f4ca64194beb, type: 2}
   speed: 0
   lifetime: 2
-  damage: 10
-  hitRadius: 1.76
-  spawnedOnDeath: []
+  onCastEffects: []
+  onHitEffects: []
 --- !u!1001 &4925800689670759249
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 8463951490904305032}
     m_Modifications:
     - target: {fileID: 4129528607655525729, guid: effd4b36970e7684fa9b76a0d17bf642,
@@ -234,6 +231,9 @@ PrefabInstance:
       value: VFX_GroundImpact
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: effd4b36970e7684fa9b76a0d17bf642, type: 3}
 --- !u!4 &9013107766678380080 stripped
 Transform:

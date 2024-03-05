@@ -10,10 +10,10 @@ public class EnemyUnit : Unit
     public bool isActive;
     public float attackRange;
     public Transform castAnchor;
-    public ObjectPool.ObjectPoolName projectilePoolName;
+    public ObjectPool projectilePool;
     public Vector2 attackCooldown;
-    
-    public ObjectPool.ObjectPoolName[] spawnOnDeath;
+
+    public ObjectPool[] spawnOnDeath;
     
     private Animator _animator;
     private DissolveController _dissolveController;
@@ -78,7 +78,7 @@ public class EnemyUnit : Unit
 
     public void FireProjectile()
     {
-        var projectile = ObjectPoolManager.GetPool(projectilePoolName).GetPooledObject().GetComponent<Projectile>();
+        var projectile = projectilePool.GetPooledObject().GetComponent<Projectile>();
         projectile.transform.position = castAnchor.transform.position;
         projectile.transform.forward = transform.forward;
         projectile.gameObject.SetActive(true);
@@ -105,7 +105,7 @@ public class EnemyUnit : Unit
     {
         foreach (var go in spawnOnDeath)
         {
-            var obj = ObjectPoolManager.GetPool(go).GetPooledObject();
+            var obj = go.GetPooledObject();
             if(obj == null) return;
             
             obj.transform.position = transform.position;

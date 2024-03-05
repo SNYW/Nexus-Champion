@@ -5,23 +5,17 @@ using UnityEngine;
 
 public static class ObjectPoolManager
 {
-    private static Dictionary<ObjectPool.ObjectPoolName, ObjectPool> _pools;
-
-    public static ObjectPool GetPool(ObjectPool.ObjectPoolName poolName)
-    {
-        return _pools.TryGetValue(poolName, out var pool) ? pool : null;
-    }
+    private static List<ObjectPool> _pools;
 
     public static void InitPools()
     {
-        var allPools = Resources.LoadAll("Data/Pools", typeof(ObjectPool)).Cast<ObjectPool>().ToArray();
+        var allPools = Resources.LoadAll("Data/Pools", typeof(ObjectPool)).Cast<ObjectPool>().ToList();
 
-        _pools = new Dictionary<ObjectPool.ObjectPoolName, ObjectPool>();
+        _pools = allPools;
         
-        foreach (var objectPool in allPools)
+        foreach (var objectPool in _pools)
         {
           objectPool.InitPool();
-          _pools.Add(objectPool.poolName, objectPool);
         }
     }
 }

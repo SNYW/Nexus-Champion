@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public ObjectPool.ObjectPoolName poolToSpawn;
+    public ObjectPool enemyPool;
     public Transform spawnAnchor;
     public float spawnRadius;
 
@@ -40,7 +40,7 @@ public class EnemySpawner : MonoBehaviour
             // Instantiate the prefab at the random point
             Vector3 randomPosition =  spawnAnchor.transform.position + new Vector3(randomPoint.x, 0f, randomPoint.y);
 
-            var newSpawn = ObjectPoolManager.GetPool(poolToSpawn).GetPooledObject();
+            var newSpawn = enemyPool.GetPooledObject();
             newSpawn.transform.position = randomPosition;
             newSpawn.transform.rotation = spawnAnchor.rotation;
             newSpawn.gameObject.SetActive(true);

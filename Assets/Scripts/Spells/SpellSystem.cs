@@ -47,7 +47,7 @@ public class SpellSystem : MonoBehaviour
     private void CastProjectileSpell(ProjectileSpell ps)
     {
        
-        var projectile = ObjectPoolManager.GetPool(ps.projectileName).GetPooledObject().GetComponent<Projectile>();
+        var projectile = ps.projectile.GetPooledObject().GetComponent<Projectile>();
 
         projectile.transform.position = projectileAnchor.transform.position;
         projectile.transform.forward = _indicator.transform.forward;

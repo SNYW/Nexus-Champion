@@ -6,25 +6,12 @@ namespace ObjectPooling
     [CreateAssetMenu(fileName = "new Pool", menuName = "Game Data/Object Pool")]
     public class ObjectPool : ScriptableObject
     {
-        public ObjectPoolName poolName;
         [SerializeField] private GameObject pooledObject;
         [SerializeField] private int minAmount;
 
         private Transform _pooledObjectParent;
 
         private Queue<GameObject> _pool;
-        
-        public enum ObjectPoolName
-        {
-            Fireball,
-            FireballExplosion,
-            SmallGolemDeath,
-            FloatingText,
-            SmallGolem,
-            EnemyFireball,
-            EnemyFireballExplosion,
-            PlayerUnit
-        }
 
         public GameObject GetPooledObject()
         {

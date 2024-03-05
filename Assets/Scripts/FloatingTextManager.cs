@@ -4,8 +4,10 @@ using UnityEngine;
 
 public static class FloatingTextManager
 {
-  public static void Init()
+  private static ObjectPool _textPool;
+  public static void Init(ObjectPool textPool)
   {
+    _textPool = textPool;
     SystemEventManager.Subscribe(SystemEventManager.SystemEventType.EnemyDamaged, OnEnemyDamaged);
   }
 
@@ -19,7 +21,7 @@ public static class FloatingTextManager
 
   private static void SpawnFloatingDamageText(EnemyUnit.EnemyDamageEvent damageEvent)
   {
-    if(!ObjectPoolManager.GetPool(ObjectPool.ObjectPoolName.FloatingText).GetPooledObject().TryGetComponent<FloatingText>(out var text)) return;
+    if(!_textPool.GetPooledObject().TryGetComponent<FloatingText>(out var text)) return;
 
     text.transform.position = damageEvent.unit.transform.position + Vector3.up * 2;
     text.Init(damageEvent.damageAmount);
