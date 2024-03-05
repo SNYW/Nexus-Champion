@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Spawn - Fireball Explosion - 1
   m_EditorClassIdentifier: 
   amount: 1
-  poolName: 1
+  pool: {fileID: 11400000, guid: dbeb50f1546ae734b8bd16499e6fea67, type: 2}

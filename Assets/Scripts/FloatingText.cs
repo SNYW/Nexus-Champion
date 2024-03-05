@@ -13,22 +13,30 @@ public class FloatingText : PooledObject
 
    private Vector3 _startCanvasPos;
 
-   public void Init(int dmgAmount)
+   private void OnEnable()
    {
-      text.text = dmgAmount.ToString();
+      transform.rotation = Quaternion.identity;
+      canvas.transform.localPosition = Vector3.zero;
+   }
+
+   public void Init(EnemyUnit.EnemyDamageEvent dmgEvent)
+   {
+      text.text = dmgEvent.damageAmount.ToString();
+      transform.position = dmgEvent.unit.transform.position;
+      canvasGroup.alpha = 1;
+      
       _startCanvasPos = canvas.transform.position;
 
-      LeanTween.moveLocalY(canvas.gameObject, canvas.transform.position.y + moveAmount, 0.3f);
+      LeanTween.moveY(canvas.gameObject, transform.position.y + moveAmount, 0.3f);
       LeanTween.alphaCanvas(canvasGroup, 0, 1.2f).setOnComplete(ReQueue);
       LeanTween.scale(gameObject, new Vector3(2, 2, 2), 0.8f).setEasePunch();
    }
 
    private void OnDisable()
    {
+      LeanTween.cancelAll(gameObject);
       canvas.transform.position = _startCanvasPos;
       canvasGroup.alpha = 1;
       transform.localScale = Vector3.one;
-      transform.localPosition = Vector3.zero;
-      transform.rotation = Quaternion.identity;
    }
 }
