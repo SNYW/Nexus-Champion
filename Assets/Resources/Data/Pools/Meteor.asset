@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9ddddecc3393154e9f3ac317e7a64c2, type: 3}
   m_Name: Meteor
   m_EditorClassIdentifier: 
-  pooledObject: {fileID: 285929789472415693, guid: 972ba2603ad7f104fab441ddb5268808,
+  pooledObject: {fileID: 980760046642077562, guid: 97b69626e6b45ee489c5557977dd5a01,
     type: 3}
   minAmount: 10

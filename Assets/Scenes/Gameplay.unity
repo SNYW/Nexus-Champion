@@ -1614,6 +1614,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpellButton (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8358446184324782723, guid: c82d49a176fda9447a226d388f927b5e,
+        type: 3}
+      propertyPath: spell
+      value: 
+      objectReference: {fileID: 11400000, guid: 47aa07c5a02731844982f50069a4e196,
+        type: 2}
+    - target: {fileID: 8358446184324782723, guid: c82d49a176fda9447a226d388f927b5e,
+        type: 3}
+      propertyPath: hotkey
+      value: 119
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2623,7 +2634,7 @@ PrefabInstance:
     - target: {fileID: 9205618237452724560, guid: e97e34ca768dca447a86f05c8daa7521,
         type: 3}
       propertyPath: spawnDelay
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
