@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Meteor
   m_EditorClassIdentifier: 
   spellIcon: {fileID: 0}
-  coolDown: 0
+  coolDown: 3
   indicatorPrefab: {fileID: 6467987258048275802, guid: ece6477448ee9cc4889db4ccbadffefc,
     type: 3}
   projectile: {fileID: 11400000, guid: cba4b2b10b89df242bae42d800976d87, type: 2}

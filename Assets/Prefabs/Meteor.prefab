@@ -137,5 +137,5 @@ MonoBehaviour:
   effectUpdateRate: 0
   worldPosEffects: []
   onCastEffects:
-  - {fileID: 11400000, guid: 7488d248119743d4caae221efe692922, type: 2}
+  - {fileID: 11400000, guid: f668454913cea9f40ab42399711bb258, type: 2}
   onHitEffects: []

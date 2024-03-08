@@ -49,24 +49,25 @@ public class SpellButton : MonoBehaviour
         {
             selected = false;
             SystemEventManager.RaiseEvent(SystemEventManager.SystemEventType.SpellCast, spell);
-            isOnCooldown = true;
-            ManageCooldown();
+            StopAllCoroutines();
+            StartCoroutine(ManageCooldown());
         }
     }
 
-    private void ManageCooldown()
+    private IEnumerator ManageCooldown()
     {
-        overlayedCooldownIndiator.enabled = true;
+        isOnCooldown = true;
         foreach (var indicator in cooldownIndicators)
         {
             LeanTween.value(gameObject, 0, 1, spell.coolDown)
-                .setOnUpdate(val => indicator.fillAmount = val);
+                .setOnUpdate(val =>
+                {
+                    Debug.Log(val);
+                    indicator.fillAmount = val;
+                });
         }
 
-        LeanTween.value(gameObject, 0, 1, spell.coolDown).setOnComplete(() =>
-        {
-            isOnCooldown = false;
-            overlayedCooldownIndiator.enabled = false;
-        });
+        yield return new WaitForSeconds(spell.coolDown);
+        isOnCooldown = false;
     }
 }
