@@ -132,6 +132,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pool: {fileID: 11400000, guid: cba4b2b10b89df242bae42d800976d87, type: 2}
   speed: 0
-  lifetime: 10
-  onCastEffects: []
+  lifetime: 5
+  onCastDelay: 0.8
+  effectUpdateRate: 0
+  worldPosEffects: []
+  onCastEffects:
+  - {fileID: 11400000, guid: 7488d248119743d4caae221efe692922, type: 2}
   onHitEffects: []
