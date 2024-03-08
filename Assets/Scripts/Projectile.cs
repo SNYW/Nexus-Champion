@@ -54,6 +54,14 @@ public class Projectile : PooledObject
       effect.Trigger(gameObject);
     }
   }
+  
+  private void TriggerAllEffectsImmediate(SpellEffect[] effects)
+  {
+    foreach (var effect in effects) 
+    { 
+      effect.Trigger(gameObject);
+    }
+  }
 
   private void Update()
   {
@@ -73,7 +81,7 @@ public class Projectile : PooledObject
 
   private void Die()
   {
-    StartCoroutine(TriggerAllEffects(onHitEffects, 0));
+    TriggerAllEffectsImmediate(onHitEffects);
     StopAllCoroutines();
     ReQueue();
   }
