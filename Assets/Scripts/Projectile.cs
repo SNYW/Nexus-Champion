@@ -11,7 +11,9 @@ public class Projectile : PooledObject
   public float lifetime;
   public float onCastDelay;
 
+  [Range(1,60)]
   public float effectUpdateRate;
+  
   public VisualEffect[] worldPosEffects;
   
   [SerializeReference]
@@ -37,7 +39,7 @@ public class Projectile : PooledObject
           effect.SetVector3("worldPos", transform.position);
       }
 
-      yield return new WaitForSeconds(updateRate);
+      yield return new WaitForSeconds(1/updateRate);
     }
   }
   
