@@ -27,6 +27,11 @@ public class Projectile : PooledObject
     StopAllCoroutines();
     StartCoroutine(TriggerAllEffects(onCastEffects, onCastDelay));
     StartCoroutine(UpdateVisualEffects(effectUpdateRate));
+    foreach (var effect in worldPosEffects)
+    {
+      if(effect.HasVector3("startPos")) 
+        effect.SetVector3("startPos", transform.position);
+    }
   }
 
   private IEnumerator UpdateVisualEffects(float updateRate)
