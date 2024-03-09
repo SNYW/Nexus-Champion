@@ -93,7 +93,6 @@ public class EnemyUnit : Unit
         var damageEvent = new EnemyDamageEvent(this, damageAmount);
         SystemEventManager.RaiseEvent(SystemEventManager.SystemEventType.EnemyDamaged, damageEvent);
         _healthbar.UpdateHealthIndicator(currentHealth, maxHealth);
-      
     }
 
     private void Update()

@@ -1,21 +1,25 @@
 using System.Collections.Generic;
 using System.Linq;
-using ObjectPooling;
 using UnityEngine;
 
-public static class ObjectPoolManager
+namespace ObjectPooling
 {
-    private static List<ObjectPool> _pools;
-
-    public static void InitPools()
+    public static class ObjectPoolManager
     {
-        var allPools = Resources.LoadAll("Data/Pools", typeof(ObjectPool)).Cast<ObjectPool>().ToList();
+        private static List<ObjectPool> _pools;
+        public static Transform _pooledObjectAnchor;
 
-        _pools = allPools;
-        
-        foreach (var objectPool in _pools)
+        public static void InitPools()
         {
-          objectPool.InitPool();
+            _pooledObjectAnchor = GameObject.Find("Pooled Objects").transform;
+            var allPools = Resources.LoadAll("Data/Pools", typeof(ObjectPool)).Cast<ObjectPool>().ToList();
+
+            _pools = allPools;
+        
+            foreach (var objectPool in _pools)
+            {
+                objectPool.InitPool();
+            }
         }
     }
 }

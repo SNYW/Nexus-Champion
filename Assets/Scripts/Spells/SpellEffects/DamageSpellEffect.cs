@@ -1,4 +1,5 @@
-﻿using Spells.SpellEffects;
+﻿using System.Collections.Generic;
+using Spells.SpellEffects;
 using UnityEngine;
 
 namespace Spells
@@ -7,20 +8,13 @@ namespace Spells
     public class DamageSpellEffect : SpellEffect
     {
         public int damageAmount;
-        public int maxTargets;
-        public LayerMask hitmask;
-        public float hitRadius;
-        
+        public TargetingBehaviour targetingBehaviour;
 
         public override void Trigger(GameObject obj)
         {
-            Collider[] colliders = new Collider[maxTargets];
-            if (Physics.OverlapSphereNonAlloc(obj.transform.position, hitRadius, colliders, hitmask) == 0) return;
-            foreach (var collider in colliders)
+            foreach (var unit in targetingBehaviour.GetTargets(obj.transform.position))
             {
-                if (collider == null || !collider.TryGetComponent<Unit>(out var component)) return;
-      
-                component.OnHit(obj.transform, damageAmount);
+               unit.OnHit(obj.transform, damageAmount);
             }
         }
     }

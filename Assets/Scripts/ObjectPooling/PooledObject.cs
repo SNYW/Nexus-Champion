@@ -7,9 +7,10 @@ namespace ObjectPooling
         public ObjectPool pool;
 
         protected void ReQueue()
-        {
-            pool.ReQueue(gameObject);
+        { 
             transform.position = Vector3.zero;
+            transform.parent = ObjectPoolManager._pooledObjectAnchor;
+            pool.ReQueue(gameObject);
             gameObject.SetActive(false);
         }
     }

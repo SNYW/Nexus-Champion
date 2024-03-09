@@ -9,8 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc8c8a9902d64df3a6e367e4099eb67c, type: 3}
-  m_Name: DMG - Small AOE - 40
+  m_Script: {fileID: 11500000, guid: 741234ed0aa5b6c4a890a1f48ca00381, type: 3}
+  m_Name: 10 Enemies in 5
   m_EditorClassIdentifier: 
-  damageAmount: 40
-  targetingBehaviour: {fileID: 11400000, guid: c3980ba91c91b144dbe4cde7dce90efb, type: 2}
+  maxTargets: 10
+  hitRadius: 5
+  hitmask:
+    serializedVersion: 2
+    m_Bits: 512

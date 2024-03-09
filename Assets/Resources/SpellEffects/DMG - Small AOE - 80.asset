@@ -13,8 +13,4 @@ MonoBehaviour:
   m_Name: DMG - Small AOE - 80
   m_EditorClassIdentifier: 
   damageAmount: 80
-  maxTargets: 10
-  hitmask:
-    serializedVersion: 2
-    m_Bits: 512
-  hitRadius: 3
+  targetingBehaviour: {fileID: 11400000, guid: c3980ba91c91b144dbe4cde7dce90efb, type: 2}
