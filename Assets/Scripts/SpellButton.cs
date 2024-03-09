@@ -62,7 +62,6 @@ public class SpellButton : MonoBehaviour
             LeanTween.value(gameObject, 0, 1, spell.coolDown)
                 .setOnUpdate(val =>
                 {
-                    Debug.Log(val);
                     indicator.fillAmount = val;
                 });
         }
