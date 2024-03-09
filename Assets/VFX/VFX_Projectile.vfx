@@ -87,8 +87,8 @@ MonoBehaviour:
   - title: METEOR PARTICLES
     position:
       serializedVersion: 2
-      x: 80
-      y: -428
+      x: 336
+      y: -740
       width: 1451
       height: 3084
     contents:
@@ -249,7 +249,7 @@ MonoBehaviour:
   stickyNoteInfos: []
   categories:
   - name: Size & Position
-    collapsed: 1
+    collapsed: 0
   - name: Trails
     collapsed: 1
   - name: Sparks
@@ -378,16 +378,15 @@ MonoBehaviour:
   m_UISuperCollapsed: 0
   m_UIInfos: {fileID: 114340500867371532}
   m_ParameterInfo:
-  - name: projectileStartOffsetCurve
-    path: projectileStartOffsetCurve
+  - name: Size & Position
+    path: 
     tooltip: 
-    sheetType: m_AnimationCurve
-    realType: AnimationCurve
+    sheetType: 
+    realType: 
     defaultValue:
       m_Type:
-        m_SerializableType: UnityEngine.AnimationCurve, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"frames":[{"time":0.0,"value":0.25185877084732058,"inTangent":0.0,"outTangent":0.0,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":0.006492871791124344,"value":0.08431286364793778,"inTangent":-4.882462501525879,"outTangent":-4.882462501525879,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":0.05434039235115051,"value":0.0,"inTangent":0.0,"outTangent":0.0,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":1.0,"value":0.0,"inTangent":0.0,"outTangent":0.0,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
+        m_SerializableType: 
+      m_SerializableObject: 
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -406,15 +405,16 @@ MonoBehaviour:
     max: Infinity
     enumValues: []
     descendantCount: 0
-  - name: Size & Position
-    path: 
+  - name: projectileStartOffsetCurve
+    path: projectileStartOffsetCurve
     tooltip: 
-    sheetType: 
-    realType: 
+    sheetType: m_AnimationCurve
+    realType: AnimationCurve
     defaultValue:
       m_Type:
-        m_SerializableType: 
-      m_SerializableObject: 
+        m_SerializableType: UnityEngine.AnimationCurve, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      m_SerializableObject: '{"frames":[{"time":0.0,"value":0.10158640146255493,"inTangent":0.0,"outTangent":0.0,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":0.010368604212999344,"value":0.14864391088485719,"inTangent":-4.882462501525879,"outTangent":-4.882462501525879,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":0.014850879088044167,"value":0.24486975371837617,"inTangent":-3.325629472732544,"outTangent":-3.325629472732544,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":0.05434039235115051,"value":0.0,"inTangent":0.0,"outTangent":0.0,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":1.0,"value":0.0,"inTangent":0.0,"outTangent":0.0,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -1179,7 +1179,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615489}
   m_ExposedName: trail1Gradient
   m_Exposed: 1
-  m_Order: 43
+  m_Order: 45
   m_Category: Trails
   m_Min:
     m_Type:
@@ -1259,7 +1259,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615497}
   m_ExposedName: trailScaleCurve
   m_Exposed: 1
-  m_Order: 36
+  m_Order: 38
   m_Category: Trails
   m_Min:
     m_Type:
@@ -1435,7 +1435,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615627}
   m_ExposedName: trail2Gradient
   m_Exposed: 1
-  m_Order: 44
+  m_Order: 46
   m_Category: Trails
   m_Min:
     m_Type:
@@ -1515,7 +1515,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615795}
   m_ExposedName: trail1Length
   m_Exposed: 1
-  m_Order: 41
+  m_Order: 43
   m_Category: Trails
   m_Min:
     m_Type:
@@ -1595,7 +1595,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615797}
   m_ExposedName: trail2Length
   m_Exposed: 1
-  m_Order: 42
+  m_Order: 44
   m_Category: Trails
   m_Min:
     m_Type:
@@ -1675,7 +1675,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615799}
   m_ExposedName: startPos
   m_Exposed: 1
-  m_Order: 5
+  m_Order: 7
   m_Category: Size & Position
   m_Min:
     m_Type:
@@ -1692,7 +1692,7 @@ MonoBehaviour:
   m_Nodes:
   - m_Id: 0
     linkedSlots: []
-    position: {x: 781, y: 95}
+    position: {x: 1037, y: -217}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661615799
@@ -1854,7 +1854,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615804}
   m_ExposedName: dirVelocity
   m_Exposed: 1
-  m_Order: 4
+  m_Order: 6
   m_Category: Size & Position
   m_Min:
     m_Type:
@@ -2028,7 +2028,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615813}
   m_ExposedName: startRadius
   m_Exposed: 1
-  m_Order: 2
+  m_Order: 4
   m_Category: Size & Position
   m_Min:
     m_Type:
@@ -2045,7 +2045,7 @@ MonoBehaviour:
   m_Nodes:
   - m_Id: 0
     linkedSlots: []
-    position: {x: 817, y: 200}
+    position: {x: 1073, y: -112}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661615813
@@ -2105,7 +2105,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615950}
   m_ExposedName: indicatorSize
   m_Exposed: 1
-  m_Order: 12
+  m_Order: 14
   m_Category: Indicator
   m_Min:
     m_Type:
@@ -2185,7 +2185,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615952}
   m_ExposedName: indicatorPos
   m_Exposed: 1
-  m_Order: 14
+  m_Order: 16
   m_Category: Indicator
   m_Min:
     m_Type:
@@ -2367,7 +2367,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615962}
   m_ExposedName: collideDecal2Scale
   m_Exposed: 1
-  m_Order: 34
+  m_Order: 36
   m_Category: Collisions
   m_Min:
     m_Type:
@@ -2439,7 +2439,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615964}
   m_ExposedName: collideDecal1Scale
   m_Exposed: 1
-  m_Order: 37
+  m_Order: 39
   m_Category: Collisions
   m_Min:
     m_Type:
@@ -2511,7 +2511,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615980}
   m_ExposedName: collideDecal1Life
   m_Exposed: 1
-  m_Order: 32
+  m_Order: 34
   m_Category: Collisions
   m_Min:
     m_Type:
@@ -2583,7 +2583,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615982}
   m_ExposedName: collideDecal2Life
   m_Exposed: 1
-  m_Order: 30
+  m_Order: 32
   m_Category: Collisions
   m_Min:
     m_Type:
@@ -2655,7 +2655,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616148}
   m_ExposedName: collideDecal1Gradient
   m_Exposed: 1
-  m_Order: 24
+  m_Order: 26
   m_Category: Collisions
   m_Min:
     m_Type:
@@ -2727,7 +2727,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616179}
   m_ExposedName: indicatorCol1
   m_Exposed: 1
-  m_Order: 15
+  m_Order: 17
   m_Category: Indicator
   m_Min:
     m_Type:
@@ -2943,7 +2943,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616185}
   m_ExposedName: indicatorCol2
   m_Exposed: 1
-  m_Order: 16
+  m_Order: 18
   m_Category: Indicator
   m_Min:
     m_Type:
@@ -3159,7 +3159,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616191}
   m_ExposedName: startLifetime
   m_Exposed: 1
-  m_Order: 33
+  m_Order: 35
   m_Category: Meteors
   m_Min:
     m_Type:
@@ -3178,7 +3178,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661616191}
       inputSlot: {fileID: 8926484042661616843}
-    position: {x: 817, y: 481}
+    position: {x: 1073, y: 169}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661616191
@@ -3239,7 +3239,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616193}
   m_ExposedName: quantity
   m_Exposed: 1
-  m_Order: 27
+  m_Order: 29
   m_Category: Meteors
   m_Min:
     m_Type:
@@ -3258,7 +3258,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661616193}
       inputSlot: {fileID: 8926484042661616806}
-    position: {x: 861, y: -19}
+    position: {x: 1117, y: -331}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661616193
@@ -3319,7 +3319,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616195}
   m_ExposedName: spawnCap
   m_Exposed: 1
-  m_Order: 31
+  m_Order: 33
   m_Category: Meteors
   m_Min:
     m_Type:
@@ -3391,7 +3391,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616197}
   m_ExposedName: velocityMin
   m_Exposed: 1
-  m_Order: 35
+  m_Order: 37
   m_Category: Meteors
   m_Min:
     m_Type:
@@ -3408,7 +3408,7 @@ MonoBehaviour:
   m_Nodes:
   - m_Id: 0
     linkedSlots: []
-    position: {x: 817, y: 291}
+    position: {x: 1073, y: -21}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661616197
@@ -3570,7 +3570,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616202}
   m_ExposedName: velocityMax
   m_Exposed: 1
-  m_Order: 38
+  m_Order: 40
   m_Category: Meteors
   m_Min:
     m_Type:
@@ -3587,7 +3587,7 @@ MonoBehaviour:
   m_Nodes:
   - m_Id: 0
     linkedSlots: []
-    position: {x: 820, y: 342}
+    position: {x: 1076, y: 30}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661616202
@@ -3749,7 +3749,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616207}
   m_ExposedName: meteorScale
   m_Exposed: 1
-  m_Order: 39
+  m_Order: 41
   m_Category: Meteors
   m_Min:
     m_Type:
@@ -3768,7 +3768,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661616207}
       inputSlot: {fileID: 8926484042661616867}
-    position: {x: 856, y: 1015}
+    position: {x: 1112, y: 703}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661616207
@@ -3931,7 +3931,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616215}
   m_ExposedName: meteorColourGradient
   m_Exposed: 1
-  m_Order: 40
+  m_Order: 42
   m_Category: Meteors
   m_Min:
     m_Type:
@@ -3950,7 +3950,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661616215}
       inputSlot: {fileID: 8926484042661617028}
-    position: {x: 733, y: 2005}
+    position: {x: 989, y: 1693}
     expandedSlots: []
     expanded: 1
 --- !u!114 &8926484042661616215
@@ -4011,7 +4011,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616217}
   m_ExposedName: smokeGradient
   m_Exposed: 1
-  m_Order: 26
+  m_Order: 28
   m_Category: Smoke
   m_Min:
     m_Type:
@@ -4083,7 +4083,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616223}
   m_ExposedName: smokeLifetime
   m_Exposed: 1
-  m_Order: 22
+  m_Order: 24
   m_Category: Smoke
   m_Min:
     m_Type:
@@ -4223,7 +4223,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616227}
   m_ExposedName: smokeSize
   m_Exposed: 1
-  m_Order: 17
+  m_Order: 19
   m_Category: Smoke
   m_Min:
     m_Type:
@@ -4363,7 +4363,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616231}
   m_ExposedName: smokeVelocityMin
   m_Exposed: 1
-  m_Order: 28
+  m_Order: 30
   m_Category: Smoke
   m_Min:
     m_Type:
@@ -4537,7 +4537,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616236}
   m_ExposedName: smokeVelocityMax
   m_Exposed: 1
-  m_Order: 29
+  m_Order: 31
   m_Category: Smoke
   m_Min:
     m_Type:
@@ -4711,7 +4711,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616241}
   m_ExposedName: sparkLifetime
   m_Exposed: 1
-  m_Order: 23
+  m_Order: 25
   m_Category: Sparks
   m_Min:
     m_Type:
@@ -4851,7 +4851,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616245}
   m_ExposedName: sparkSize
   m_Exposed: 1
-  m_Order: 25
+  m_Order: 27
   m_Category: Sparks
   m_Min:
     m_Type:
@@ -4923,7 +4923,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616247}
   m_ExposedName: sparkVelocityMin
   m_Exposed: 1
-  m_Order: 21
+  m_Order: 23
   m_Category: Sparks
   m_Min:
     m_Type:
@@ -5097,7 +5097,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616252}
   m_ExposedName: sparkVelocityMax
   m_Exposed: 1
-  m_Order: 20
+  m_Order: 22
   m_Category: Sparks
   m_Min:
     m_Type:
@@ -5271,7 +5271,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616257}
   m_ExposedName: sparkCount
   m_Exposed: 1
-  m_Order: 13
+  m_Order: 15
   m_Category: Sparks
   m_Min:
     m_Type:
@@ -5288,7 +5288,7 @@ MonoBehaviour:
   m_Nodes:
   - m_Id: 0
     linkedSlots: []
-    position: {x: 750, y: 1122}
+    position: {x: 1006, y: 810}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661616257
@@ -5348,7 +5348,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616269}
   m_ExposedName: toggleIndicator
   m_Exposed: 1
-  m_Order: 3
+  m_Order: 5
   m_Category: Indicator
   m_Min:
     m_Type:
@@ -5428,7 +5428,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616271}
   m_ExposedName: tex1Indicator
   m_Exposed: 1
-  m_Order: 7
+  m_Order: 10
   m_Category: Indicator
   m_Min:
     m_Type:
@@ -5508,7 +5508,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616273}
   m_ExposedName: tex2Indicator
   m_Exposed: 1
-  m_Order: 10
+  m_Order: 13
   m_Category: Indicator
   m_Min:
     m_Type:
@@ -5660,7 +5660,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616293}
   m_ExposedName: targetGravForce
   m_Exposed: 1
-  m_Order: 9
+  m_Order: 11
   m_Category: Size & Position
   m_Min:
     m_Type:
@@ -5732,7 +5732,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616426}
   m_ExposedName: indicatorPulseFrequency
   m_Exposed: 1
-  m_Order: 18
+  m_Order: 20
   m_Category: Indicator
   m_Min:
     m_Type:
@@ -5812,7 +5812,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616428}
   m_ExposedName: indicatorPulseRange
   m_Exposed: 1
-  m_Order: 19
+  m_Order: 21
   m_Category: Indicator
   m_Min:
     m_Type:
@@ -5964,7 +5964,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616432}
   m_ExposedName: indicatorLifetime
   m_Exposed: 1
-  m_Order: 6
+  m_Order: 9
   m_Category: Indicator
   m_Min:
     m_Type:
@@ -6039,7 +6039,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616797}
   - {fileID: 8926484042661616802}
   - {fileID: 8926484042661616805}
-  m_UIPosition: {x: 1082, y: -369}
+  m_UIPosition: {x: 1338, y: -681}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -6481,7 +6481,7 @@ MonoBehaviour:
   m_Children:
   - {fileID: 8926484042661617438}
   - {fileID: 8926484042661616842}
-  m_UIPosition: {x: 1082, y: 123}
+  m_UIPosition: {x: 1338, y: -189}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -7089,7 +7089,7 @@ MonoBehaviour:
   - {fileID: 8926484042661617990}
   - {fileID: 8926484042661617965}
   - {fileID: 8926484042661616872}
-  m_UIPosition: {x: 1082, y: 786}
+  m_UIPosition: {x: 1338, y: 474}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -7656,7 +7656,7 @@ MonoBehaviour:
   - {fileID: 8926484042661617025}
   - {fileID: 8926484042661617027}
   - {fileID: 8926484042661617030}
-  m_UIPosition: {x: 1082, y: 1885}
+  m_UIPosition: {x: 1338, y: 1573}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -12051,7 +12051,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 657, y: 2241}
+  m_UIPosition: {x: 913, y: 1929}
   m_UICollapsed: 0
   m_UISuperCollapsed: 1
   m_InputSlots: []
@@ -12107,7 +12107,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 893, y: 2267}
+  m_UIPosition: {x: 1149, y: 1955}
   m_UICollapsed: 0
   m_UISuperCollapsed: 1
   m_InputSlots:
@@ -22070,7 +22070,7 @@ MonoBehaviour:
   - {fileID: 8926484042661617886}
   m_ExposedName: worldPos
   m_Exposed: 1
-  m_Order: 11
+  m_Order: 12
   m_Category: Size & Position
   m_Min:
     m_Type:
@@ -22089,7 +22089,7 @@ MonoBehaviour:
   m_Nodes:
   - m_Id: 0
     linkedSlots: []
-    position: {x: 235, y: 807}
+    position: {x: 491, y: 495}
     expandedSlots:
     - {fileID: 8926484042661617886}
     expanded: 1
@@ -23419,7 +23419,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 689, y: 1320}
+  m_UIPosition: {x: 945, y: 1008}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -23557,7 +23557,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 354, y: 1442}
+  m_UIPosition: {x: 610, y: 1130}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -23650,7 +23650,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 105, y: 1320}
+  m_UIPosition: {x: 361, y: 1008}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -24108,14 +24108,14 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 0
+  m_UICollapsed: 1
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots:
   - {fileID: 8926484042661618013}
   m_ExposedName: startOffset
   m_Exposed: 1
-  m_Order: 1
+  m_Order: 3
   m_Category: Size & Position
   m_Min:
     m_Type:
@@ -24132,7 +24132,7 @@ MonoBehaviour:
   m_Nodes:
   - m_Id: 0
     linkedSlots: []
-    position: {x: 235, y: 951}
+    position: {x: 491, y: 639}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661618013
@@ -24184,7 +24184,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 383, y: 1277}
+  m_UIPosition: {x: 639, y: 965}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -24320,8 +24320,8 @@ MonoBehaviour:
   - {fileID: 8926484042661618037}
   m_ExposedName: projectileStartOffsetCurve
   m_Exposed: 1
-  m_Order: 45
-  m_Category: 
+  m_Order: 2
+  m_Category: Size & Position
   m_Min:
     m_Type:
       m_SerializableType: 
@@ -24339,7 +24339,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661618037}
       inputSlot: {fileID: 8926484042661618031}
-    position: {x: 105, y: 1252}
+    position: {x: 361, y: 940}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661618037
@@ -24367,7 +24367,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.AnimationCurve, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"frames":[{"time":0.0,"value":0.25185877084732058,"inTangent":0.0,"outTangent":0.0,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":0.006492871791124344,"value":0.08431286364793778,"inTangent":-4.882462501525879,"outTangent":-4.882462501525879,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":0.05434039235115051,"value":0.0,"inTangent":0.0,"outTangent":0.0,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":1.0,"value":0.0,"inTangent":0.0,"outTangent":0.0,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
+      m_SerializableObject: '{"frames":[{"time":0.0,"value":0.10158640146255493,"inTangent":0.0,"outTangent":0.0,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":0.010368604212999344,"value":0.14864391088485719,"inTangent":-4.882462501525879,"outTangent":-4.882462501525879,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":0.014850879088044167,"value":0.24486975371837617,"inTangent":-3.325629472732544,"outTangent":-3.325629472732544,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":0.05434039235115051,"value":0.0,"inTangent":0.0,"outTangent":0.0,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":1.0,"value":0.0,"inTangent":0.0,"outTangent":0.0,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
     m_Space: 2147483647
   m_Property:
     name: o
@@ -24400,8 +24400,8 @@ MonoBehaviour:
   - {fileID: 8926484042661618039}
   m_ExposedName: projectileStartOffsetIntensity
   m_Exposed: 1
-  m_Order: 46
-  m_Category: 
+  m_Order: 1
+  m_Category: Size & Position
   m_Min:
     m_Type:
       m_SerializableType: 
@@ -24419,7 +24419,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661618039}
       inputSlot: {fileID: 8926484042661617978}
-    position: {x: 383, y: 1375}
+    position: {x: 639, y: 1063}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661618039
